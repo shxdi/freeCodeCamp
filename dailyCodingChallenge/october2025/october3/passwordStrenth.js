@@ -84,3 +84,18 @@ function checkSecond(digits) {
 
 // Evaluate digits one by one for four rule
 // If passes then strength++
+
+// Checks the code must pass
+/* 
+1. checkStrength("123456") should return "weak".
+2. checkStrength("pass!!!") should return "weak".
+3. checkStrength("Qwerty") should return "weak".
+4. checkStrength("PASSWORD") should return "weak".
+5. checkStrength("PASSWORD!") should return "medium".
+6. checkStrength("PassWord%^!") should return "medium".
+7. checkStrength("qwerty12345") should return "medium".
+8. checkStrength("PASSWORD!") should return "medium".
+9. checkStrength("PASSWORD!") should return "medium".
+10. checkStrength("S3cur3P@ssw0rd") should return "strong".
+11. checkStrength("C0d3&Fun!") should return "strong".
+*/
