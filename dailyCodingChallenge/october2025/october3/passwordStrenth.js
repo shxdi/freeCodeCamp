@@ -11,12 +11,12 @@ Return "weak" if the password meets fewer than two of the rules.
 Return "medium" if the password meets 2 or 3 of the rules. 
 Return "strong" if the password meets all 4 rules. */
 
+// Create variable for strength
+let strength = 0;
+
 function checkStrength(password) {
   // Turn password string into array to seperate digits
   let digits = password.split('');
-
-  // Create variable for strength
-  let strength = 0;
 
   // Evaluate digits one by one for first rule
   checkFirst(digits);
