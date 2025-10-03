@@ -14,3 +14,20 @@ Return "strong" if the password meets all 4 rules. */
 function checkStrength(password) {
   return password;
 }
+
+// Turn password string into array to seperate digits
+// Create variable for strength
+
+// Evaluate digits one by one for first rule
+// If passes then strength++
+
+// Evaluate digits one by one for second rule
+// If passes then strength++
+
+// Evaluate digits one by one for third rule
+// If passes then strength++
+
+// Evaluate digits one by one for four rule
+// If passes then strength++
+
+// If strength = 1 return "weak", 2/3 return "medium", 4 return "strong"
