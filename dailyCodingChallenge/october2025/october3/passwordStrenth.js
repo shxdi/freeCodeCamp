@@ -20,15 +20,12 @@ function checkStrength(password) {
 
   // Evaluate digits one by one for first rule
   checkFirst(digits);
-  console.log(strength);
 
   // Evaluate digits one by one for second rule
   checkSecond(digits);
-  console.log(strength);
 
   // Evaluate digits one by one for third rule
   checkThird(digits);
-  console.log(strength);
 
   // If strength = 0/1 return "weak", 2/3 return "medium", 4 return "strong"
   if (strength === 0 || strength === 1) {
