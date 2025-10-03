@@ -1,3 +1,3 @@
-function toBinary(decimal) {
-  return decimal;
+function checkStrength(password) {
+  return password;
 }
