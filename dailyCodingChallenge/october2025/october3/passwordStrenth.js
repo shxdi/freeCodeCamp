@@ -18,6 +18,15 @@ function checkStrength(password) {
   // Create variable for strength
   let strength = 0;
 
+  // If strength = 0/1 return "weak", 2/3 return "medium", 4 return "strong"
+  if (strength === 0 || strength === 1) {
+    return 'weak';
+  } else if (strength === 2 || strength === 3) {
+    return 'medium';
+  } else if (strength === 4) {
+    return 'strong';
+  }
+
   return password;
 }
 
@@ -32,5 +41,3 @@ function checkStrength(password) {
 
 // Evaluate digits one by one for four rule
 // If passes then strength++
-
-// If strength = 1 return "weak", 2/3 return "medium", 4 return "strong"
