@@ -21,6 +21,9 @@ function checkStrength(password) {
   // Evaluate digits one by one for first rule
   checkFirst(digits);
 
+  // Evaluate digits one by one for second rule
+  checkSecond(digits);
+
   // If strength = 0/1 return "weak", 2/3 return "medium", 4 return "strong"
   if (strength === 0 || strength === 1) {
     return 'weak';
@@ -41,8 +44,40 @@ function checkFirst(digits) {
   }
 }
 
-// Evaluate digits one by one for second rule
-// If passes then strength++
+// Create function to check second rule
+function checkSecond(digits) {
+  let upperCase;
+  let lowerCase;
+
+  for (let i = 0; i < digits.length; i++) {
+    if (
+      digits[i] === digits[i].toUpperCase() &&
+      digits[i] !== digits[i].toLowerCase()
+    ) {
+      upperCase = true;
+      return;
+    } else {
+      upperCase = false;
+    }
+  }
+
+  for (let i = 0; i < digits.length; i++) {
+    if (
+      digits[i] === digits[i].toLowerCase() &&
+      digits[i] !== digits[i].toUpperCase()
+    ) {
+      lowerCase = true;
+      return;
+    } else {
+      lowerCase = false;
+    }
+  }
+
+  if (upperCase === true && lowerCase === true) {
+    // If passes then strength++
+    strength++;
+  }
+}
 
 // Evaluate digits one by one for third rule
 // If passes then strength++
