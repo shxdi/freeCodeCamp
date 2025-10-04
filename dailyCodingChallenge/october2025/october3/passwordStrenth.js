@@ -27,6 +27,9 @@ function checkStrength(password) {
   // Evaluate digits one by one for third rule
   checkThird(digits);
 
+  // Evaluate digits one by one for four rule
+  checkFourth(digits);
+
   // If strength = 0/1 return "weak", 2/3 return "medium", 4 return "strong"
   if (strength === 0 || strength === 1) {
     return 'weak';
@@ -100,7 +103,34 @@ function checkThird(digits) {
   }
 }
 
-// Evaluate digits one by one for four rule
+// Create function to check fourth rule
+function checkFourth(digits) {
+  let specialChar;
+  for (let i = 0; i < digits.length; i++) {
+    if (digits[i] === '!') {
+      specialChar = true;
+    } else if (digits[i] === '@') {
+      specialChar = true;
+    } else if (digits[i] === '#') {
+      specialChar = true;
+    } else if (digits[i] === '$') {
+      specialChar = true;
+    } else if (digits[i] === '%') {
+      specialChar = true;
+    } else if (digits[i] === '^') {
+      specialChar = true;
+    } else if (digits[i] === '&') {
+      specialChar = true;
+    } else if (digits[i] === '*') {
+      specialChar = true;
+    }
+  }
+
+  if (specialChar === true) {
+    strength++;
+  }
+}
+
 // If passes then strength++
 
 // Checks the code must pass
