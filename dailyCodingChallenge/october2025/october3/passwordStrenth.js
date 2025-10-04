@@ -61,9 +61,6 @@ function checkSecond(digits) {
       digits[i] !== digits[i].toLowerCase()
     ) {
       upperCase = true;
-      return;
-    } else {
-      upperCase = false;
     }
   }
 
@@ -73,9 +70,6 @@ function checkSecond(digits) {
       digits[i] !== digits[i].toUpperCase()
     ) {
       lowerCase = true;
-      return;
-    } else {
-      lowerCase = false;
     }
   }
 
@@ -127,11 +121,10 @@ function checkFourth(digits) {
   }
 
   if (specialChar === true) {
+    // If passes then strength++
     strength++;
   }
 }
-
-// If passes then strength++
 
 // Checks the code must pass
 /* 
