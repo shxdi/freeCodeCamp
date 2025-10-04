@@ -86,8 +86,6 @@ function checkThird(digits) {
   for (let i = 0; i < digits.length; i++) {
     if (!isNaN(digits[i])) {
       hasNumber = true;
-    } else {
-      hasNumber = false;
     }
   }
 
