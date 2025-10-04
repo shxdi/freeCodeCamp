@@ -32,10 +32,13 @@ function checkStrength(password) {
 
   // If strength = 0/1 return "weak", 2/3 return "medium", 4 return "strong"
   if (strength === 0 || strength === 1) {
+    resetStrength();
     return 'weak';
   } else if (strength === 2 || strength === 3) {
+    resetStrength();
     return 'medium';
   } else if (strength === 4) {
+    resetStrength();
     return 'strong';
   }
 
@@ -122,6 +125,10 @@ function checkFourth(digits) {
     // If passes then strength++
     strength++;
   }
+}
+
+function resetStrength() {
+  strength = 0;
 }
 
 // Checks the code must pass
