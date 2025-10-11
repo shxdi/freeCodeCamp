@@ -25,16 +25,37 @@ FF	255
 let valid;
 
 function hexToDecimal(hex) {
+  // Turn input into array
   let hexArray = hex.split('');
 
+  // Check if input was valid hexadecimal
   checkValid(hexArray);
   if (valid !== true) {
     return 'error';
   }
 
-  return hex;
+  // Turn hexadecimal letters into numbers
+  for (let i = 0; i < hexArray.length; i++) {
+    console.log(hexArray[i]);
+    if (hexArray[i] === 'A' || hexArray[i] === 'a') {
+      hexArray[i] = 10;
+    } else if (hexArray[i] === 'B' || hexArray[i] === 'b') {
+      hexArray[i] = 11;
+    } else if (hexArray[i] === 'C' || hexArray[i] === 'c') {
+      hexArray[i] = 12;
+    } else if (hexArray[i] === 'D' || hexArray[i] === 'd') {
+      hexArray[i] = 13;
+    } else if (hexArray[i] === 'E' || hexArray[i] === 'e') {
+      hexArray[i] = 14;
+    } else if (hexArray[i] === 'F' || hexArray[i] === 'f') {
+      hexArray[i] = 15;
+    }
+  }
+
+  return decimal;
 }
 
+// Function for checking if hexadecimal is valid
 function checkValid(hexArray) {
   for (let i = 0; i < hexArray.length; i++) {
     if (!hexArray[i].match(/[0-9|A-F]/i)) {
