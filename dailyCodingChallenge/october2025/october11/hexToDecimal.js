@@ -22,8 +22,29 @@ A0	160
 FF	255
 100	256*/
 
+let valid;
+
 function hexToDecimal(hex) {
+  let hexArray = hex.split('');
+
+  checkValid(hexArray);
+  if (valid !== true) {
+    return 'error';
+  }
+
   return hex;
+}
+
+function checkValid(hexArray) {
+  for (let i = 0; i < hexArray.length; i++) {
+    if (!hexArray[i].match(/[0-9|A-F]/i)) {
+      alert('Invalid input');
+      valid = false;
+      return;
+    } else {
+      valid = true;
+    }
+  }
 }
 
 /*
