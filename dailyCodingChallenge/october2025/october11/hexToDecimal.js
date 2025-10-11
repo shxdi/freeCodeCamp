@@ -52,6 +52,11 @@ function hexToDecimal(hex) {
     }
   }
 
+  // Variable for converted decimal
+  let decimal = 0;
+  // Reverse array for proper order for equation
+  let equationArray = hexArray.reverse();
+
   return decimal;
 }
 
