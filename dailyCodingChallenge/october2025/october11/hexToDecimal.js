@@ -56,6 +56,10 @@ function hexToDecimal(hex) {
   let decimal = 0;
   // Reverse array for proper order for equation
   let equationArray = hexArray.reverse();
+  // Loop for hexadecimal to decimal equation
+  for (let i = 0; i < equationArray.length; i++) {
+    decimal += equationArray[i] * 16 ** i;
+  }
 
   return decimal;
 }
