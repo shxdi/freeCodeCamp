@@ -26,9 +26,6 @@ function battle(ourTeam, opponent) {
   let ourValues = valueArray(ourWords);
   let oppValues = valueArray(oppWords);
 
-  console.log(ourValues);
-  console.log(oppValues);
-
   return winner;
 }
 
@@ -37,8 +34,11 @@ function valueWord(word) {
   let wordValue = 0;
 
   for (let i = 0; i < word.length; i++) {
-    let currentValue = word[i].charCodeAt(0) - 96;
-    wordValue += currentValue;
+    if (word[i] === word[i].toUpperCase()) {
+      wordValue += (word[i].charCodeAt(0) - 64) * 2;
+    } else if (word[i] === word[i].toLowerCase()) {
+      wordValue += word[i].charCodeAt(0) - 96;
+    }
   }
 
   return wordValue;
@@ -49,7 +49,6 @@ function valueArray(array) {
 
   for (let i = 0; i < array.length; i++) {
     arrayOfValues[i] = valueWord(array[i]);
-    console.log(arrayOfValues[i]);
   }
   return arrayOfValues;
 }
