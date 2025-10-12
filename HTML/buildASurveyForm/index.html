@@ -5,5 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Form</title>
   </head>
-  <body></body>
+  <body>
+    <h1 id="title">What is your favorite fruit?</h1>
+    <p id="description">
+      Let us know your favorite fruits in this short survey!
+    </p>
+
+    <form action="" id="survey-form">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name" id="name-label">Name (required):</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ex. John Doe"
+          required
+        />
+
+        <label for="email" id="email-label">Email (required):</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ex. email@email.com"
+          required
+        />
+
+        <label for="number" id="number-label">Age (optional):</label>
+        <input
+          type="number"
+          id="number"
+          name="age"
+          min="3"
+          max="100"
+          placeholder="Ex. 42"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Which taste do you prefer?</legend>
+
+        <input type="radio" id="sweet" name="taste" value="sweet" checked />
+        <label for="sweet">Sweet</label>
+        <input type="radio" id="sour" name="taste" value="sour" />
+        <label for="sour">Sour</label>
+        <input type="radio" id="bitter" name="taste" value="bitter" />
+        <label for="bitter">Bitter</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          What is your favorite popular fruit? (choose as many as you would
+          like)
+        </legend>
+        <input type="checkbox" id="apple" name="popular" value="apple" />
+        <label for="apple">Apple</label>
+        <input type="checkbox" id="banana" name="popular" value="banana" />
+        <label for="banana">Banana</label>
+        <input type="checkbox" id="oranges" name="popular" value="oranges" />
+        <label for="oranges">Oranges</label>
+        <input type="checkbox" id="grapes" name="popular" value="grapes" />
+        <label for="grapes">Grapes</label>
+        <input
+          type="checkbox"
+          id="strawberries"
+          name="popular"
+          value="strawberries"
+        />
+        <label for="strawberries">Strawberries</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What is your favorite melon?</legend>
+        <select id="dropdown" name="melons">
+          <option value="watermelon">Watermelon</option>
+          <option value="cantaloupe">Cantaloupe</option>
+          <option value="honeydew">Honeydew</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Did we miss your favorite?</legend>
+        <textarea id="extras" name="extras" cols="30" rows="10"></textarea>
+      </fieldset>
+
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
 </html>
