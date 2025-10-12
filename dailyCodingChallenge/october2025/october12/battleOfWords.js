@@ -16,9 +16,9 @@ Return "We win" if your team is the winner, "We lose" if your team loses, and "D
 teams have the same number of wins. */
 
 function battle(ourTeam, opponent) {
-  let winner;
+  let winStatement;
 
-  // Seperate words into Array
+  // Seperate words into array
   let ourWords = ourTeam.split(' ');
   let oppWords = opponent.split(' ');
 
@@ -26,7 +26,34 @@ function battle(ourTeam, opponent) {
   let ourValues = valueArray(ourWords);
   let oppValues = valueArray(oppWords);
 
-  return winner;
+  // Variables for round wins
+  let ourWins = 0;
+  let oppWins = 0;
+
+  // Find battle length
+  let lengthOfBattle = ourValues.length;
+
+  // Loop for battling each round
+  for (let i = 0; i < lengthOfBattle; i++) {
+    if (ourValues[i] > oppValues[i]) {
+      ourWins++;
+      console.log(ourWins);
+    } else if (ourValues[i] < oppValues[i]) {
+      oppWins++;
+      console.log(oppWins);
+    }
+  }
+
+  // Find battle winner
+  if (ourWins > oppWins) {
+    winStatement = 'We win';
+  } else if (ourWins < oppWins) {
+    winStatement = 'We lose';
+  } else if (ourWins === oppWins) {
+    winStatement = 'Draw';
+  }
+
+  return winStatement;
 }
 
 // Find the value of word
@@ -44,6 +71,7 @@ function valueWord(word) {
   return wordValue;
 }
 
+// Set the values of each word in an array
 function valueArray(array) {
   let arrayOfValues = [];
 
