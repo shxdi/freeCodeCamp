@@ -5,5 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Page</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Checkout</h1>
+
+    <section>
+      <h2>Your Cart</h2>
+
+      <img src="./teaCup.jpg" alt="Tea Cup" height="320" />
+      <p>Tea Cup</p>
+      <p>$34.99</p>
+    </section>
+
+    <section>
+      <h2>Payment Information</h2>
+
+      <form action="">
+        <fieldset>
+          <label for="card-name"
+            >Cardholder Name<span aria-hidden="true">*</span></label
+          >
+          <input type="text" name="card-name" id="card-name" required />
+
+          <label for="card-number"
+            >Card Number<span aria-hidden="true">*</span></label
+          >
+          <input
+            type="text"
+            name="card-number"
+            id="card-number"
+            required
+            aria-describedby="card-number-help"
+          />
+          <p id="card-number-help">
+            The card number must not include spaces or dashes
+          </p>
+
+          <label for="expire-date"
+            >Expiry Date <span aria-hidden="true">*</span></label
+          >
+          <input type="text" name="expire-date" id="expire-date" required />
+
+          <label for="cvv">CVV <span aria-hidden="true">*</span></label>
+          <input type="text" name="cvv" id="cvv" required />
+        </fieldset>
+
+        <button type="submit">Confirm Order</button>
+      </form>
+    </section>
+  </body>
 </html>
