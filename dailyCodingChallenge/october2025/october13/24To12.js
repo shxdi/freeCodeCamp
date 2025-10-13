@@ -27,7 +27,7 @@ function to12(time) {
     additional = ' AM';
 
     // Remove 12 hours if after 1pm
-    time = '12';
+    time = '12' + time.slice(2, 4);
 
     // Get final string
     combineString(time, additional);
