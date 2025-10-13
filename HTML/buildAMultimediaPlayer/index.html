@@ -5,5 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimedia Player</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Multimedia Player</h1>
+
+    <section>
+        <h2>Poem</h2>
+        <audio aria-label="poem" controls>
+            <source src="./poem.mp4" type="video/mp4">
+        </audio>
+    </section>
+
+    <section>
+        <h2>Poem</h2>
+        <video aria-label="poem" width="640" controls>
+            <source src="./poem.mp4" type="video/mp4">
+            <track src="poemsubtitles_ar.vtt" kind="subtitles" srclang="ar" label="Arabic"></track>
+        </video>
+    </section>
+
+    <section>
+        <h2>Transcript</h2>
+        <p>*Arabic*</p>
+    </section>
+  </body>
 </html>
