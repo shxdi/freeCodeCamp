@@ -17,5 +17,8 @@ function count(text, pattern) {
   // Variable for count of pattern
   let patternCount;
 
+  // Find how many possible patterns in text
+  let possibleCount = text.length - pattern.length + 1;
+
   return patternCount;
 }
