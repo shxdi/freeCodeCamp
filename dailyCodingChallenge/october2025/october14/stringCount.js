@@ -22,7 +22,6 @@ function count(text, pattern) {
 
   // Loop to check pattern in text
   for (let i = 0; i < possibleCount; i++) {
-    console.log(text.substr(i, pattern.length));
     if (text.substr(i, pattern.length) === pattern) {
       patternCount++;
     }
