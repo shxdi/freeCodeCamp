@@ -15,10 +15,18 @@ The first two a's and the second two.
 
 function count(text, pattern) {
   // Variable for count of pattern
-  let patternCount;
+  let patternCount = 0;
 
   // Find how many possible patterns in text
   let possibleCount = text.length - pattern.length + 1;
+
+  // Loop to check pattern in text
+  for (let i = 0; i < possibleCount; i++) {
+    console.log(text.substr(i, pattern.length));
+    if (text.substr(i, pattern.length) === pattern) {
+      patternCount++;
+    }
+  }
 
   return patternCount;
 }
