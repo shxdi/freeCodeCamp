@@ -14,5 +14,8 @@ The first two a's and the second two.
 */
 
 function count(text, pattern) {
-  return text;
+  // Variable for count of pattern
+  let patternCount;
+
+  return patternCount;
 }
