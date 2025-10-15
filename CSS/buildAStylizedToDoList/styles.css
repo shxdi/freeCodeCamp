@@ -1,1 +1,50 @@
- 
+body {
+  background-color: lightslategray;
+}
+
+h1 {
+  text-align: center;
+}
+
+.todo-list {
+  background-color: white;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.list-item {
+  background-color: slategray;
+  border-radius: 5px;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  height: 75px;
+}
+
+.sub-item {
+  margin: 10px;
+}
+
+.sub-item-link {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.sub-item-link:visited {
+  color: blue;
+}
+
+.sub-item-link:hover {
+  color: darkblue;
+}
+
+.sub-item-link:focus {
+  outline: 1px dotted black;
+}
+
+.sub-item-link:active {
+  color: black;
+}
