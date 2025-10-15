@@ -16,5 +16,25 @@ For example, '<a href="#">Click here</a>' should return "Click here".
 */
 
 function stripTags(html) {
-  return html;
+  // Add in ',' to seperate HTML tags
+  let newHtml = html.replace(/>/g, '>,');
+  newHtml = newHtml.replace(/</g, ',<');
+
+  // Split into array
+  let htmlArray = newHtml.split(',');
+
+  // Loop removing the tags
+  for (let i = 0; i < htmlArray.length; i++) {
+    // If the first letter equals the opening tag
+    if (htmlArray[i][0] === '<') {
+      // Delete from array
+      let deleted = htmlArray.splice(i, 1);
+    }
+  }
+  console.log(htmlArray);
+
+  // Join htmlArray into final text
+  let tagsStripped = htmlArray.join('');
+
+  return tagsStripped;
 }
