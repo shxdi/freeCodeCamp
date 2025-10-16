@@ -1,1 +1,22 @@
- 
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  min-height: calc(100vh - 100px);
+  width: 75vw;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+hr,
+section {
+  width: 100%;
+}
+
+img {
+  width: 320px;
+}
+
+ul {
+  list-style: square inside;
+}
