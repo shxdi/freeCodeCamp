@@ -27,5 +27,61 @@ Neither the local or domain part can have two dots in a row.
 */
 
 function validate(email) {
-  return email;
+  // Seperate parts of email
+  let emailArray = email.split('@');
+
+  // Check if contains exactly one '@'
+  if (emailArray[2] !== undefined || emailArray[1] === undefined) {
+    // Return 'false' if does not contain exactly '@'
+    return false;
+  }
+
+  // Variable for checking dots
+  let dotCheck = email.split('.');
+  // Check if there are more than one '.' in a row
+  for (let i = 0; i < dotCheck.length; i++) {
+    // Check if one of the array elements are '' (if two dots together it would contain '')
+    if (dotCheck[i] === '') {
+      // Return false if '' is in array
+      return false;
+    }
+  }
+
+  // Variable for the local part of email
+  let localPart = emailArray[0];
+
+  // Check if localPart contains only letters, digits, dots, underscores and hypens
+  if (localPart.match(/[^a-zA-Z0-9-_.]/)) {
+    // Return false if contains other than above check
+    return false;
+  }
+
+  // Check if localPart starts or ends with '.'
+  if (localPart[0] === '.' || localPart[localPart.length - 1] === '.') {
+    // Return false if starts or ends with '.'
+    return false;
+  }
+
+  // Variable for domain part of email
+  let domainPart = emailArray[1];
+
+  // Variable to check domain
+  let domainCheck = domainPart.split('.');
+
+  // Check if domain contains at least one '.'
+  if (domainCheck[1] === undefined) {
+    // Return false if only one value in array
+    return false;
+  }
+
+  // Check if ends in dot followed by two letters
+  if (!domainCheck[domainCheck.length - 1].match(/[a-z]{2,}/i)) {
+    // Return false if doesnt end in at least two letters
+    return false;
+  }
+
+  console.log(dotCheck);
+
+  // If passed all checks, return true
+  return true;
 }
