@@ -80,8 +80,6 @@ function validate(email) {
     return false;
   }
 
-  console.log(dotCheck);
-
   // If passed all checks, return true
   return true;
 }
