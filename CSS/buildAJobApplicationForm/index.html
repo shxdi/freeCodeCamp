@@ -5,5 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Application Form</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Job Application Form</h1>
+
+      <form action="">
+        <label for="name">Full Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Name Here"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Email Here"
+          required
+        />
+
+        <label for="position">Position</label>
+        <select name="position" id="position" required>
+          <option value="" disabled selected>Select Position</option>
+          <option value="front-end-dev">Front end developer</option>
+          <option value="full-stack-dev">Full-stack developer</option>
+          <option value="project-manager">Project manager</option>
+          <option value="web-designer">Web designer</option>
+          <option value="ux-designer">UX designer</option>
+        </select>
+
+        <fieldset class="radio-group">
+          <legend>Availability:</legend>
+
+          <label for="full-time">Full Time</label>
+          <input type="radio" name="availability" id="full-time" required />
+
+          <label for="part-time">Part Time</label>
+          <input type="radio" name="availability" id="part-time" />
+        </fieldset>
+
+        <label for="message">Tell us more about yourself!</label>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Tell us more"
+        ></textarea>
+
+        <button type="submit">Send Application</button>
+      </form>
+    </div>
+  </body>
 </html>
