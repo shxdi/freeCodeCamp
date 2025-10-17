@@ -19,5 +19,30 @@ For example, given "4012-8888-8888-1881" return "****-****-****-1881".
 */
 
 function mask(card) {
-  return card;
+  // Variable for what seperates the number sets
+  let seperator = card[4];
+
+  // Array for the number sets
+  let numberSets = card.split(seperator);
+  // Varible for length of numberSets
+  let setsAmount = numberSets.length;
+
+  // Variable for the last number set
+  let lastSet = numberSets[setsAmount - 1];
+
+  // Variable for masked set
+  let maskedSet = '****';
+
+  // Variable to return with masked card
+  let maskedCard = '';
+
+  // Loop adding masked sets for all but last set of numbers
+  for (let i = 0; i < setsAmount - 1; i++) {
+    maskedCard += maskedSet + seperator;
+  }
+
+  // Finally add the lastSet to maskedCard
+  maskedCard += lastSet;
+
+  return maskedCard;
 }
