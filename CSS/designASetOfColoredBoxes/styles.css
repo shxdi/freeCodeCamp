@@ -1,1 +1,36 @@
- 
+body {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.color-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.color1 {
+  background-color: #1818aa;
+}
+
+.color2 {
+  background-color: rgb(98, 197, 136);
+}
+
+.color3 {
+  background-color: red;
+}
+
+.color4 {
+  background-color: hsl(293, 36%, 52%);
+}
+
+.color5 {
+  background-color: yellow;
+}
