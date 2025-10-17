@@ -1,1 +1,38 @@
- 
+body {
+  background-color: rgb(104, 187, 104);
+  text-align: center;
+}
+
+.form-container {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  padding: 25px;
+  width: 75vw;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 10vh auto;
+}
+
+label {
+  margin: 8px;
+  color: rgb(71, 71, 71);
+}
+
+input,
+textarea {
+  width: 95%;
+  padding: 1em;
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: rgb(50, 146, 255);
+  font-size: 1.2em;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(33, 105, 187);
+}
