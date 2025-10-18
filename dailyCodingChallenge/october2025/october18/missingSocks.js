@@ -22,5 +22,42 @@ Return the number of complete pairs of socks.
 */
 
 function sockPairs(pairs, cycles) {
-  return pairs;
+  // Variable for socks
+  let socks = pairs * 2;
+
+  // Loop for running cycles
+  for (let i = 0; i < cycles; i++) {
+    // Variable for current cycle
+    let currentCycle = i + 1;
+
+    // If is a 2nd cycle
+    if (currentCycle % 2 === 0) {
+      socks -= 1;
+    }
+
+    // If is a 3rd cycle
+    if (currentCycle % 3 === 0) {
+      socks += 1;
+    }
+
+    // If is a 5th cycle
+    if (currentCycle % 5 === 0) {
+      socks -= 1;
+    }
+
+    // If is a 10th cycle
+    if (currentCycle % 10 === 0) {
+      socks += 2;
+    }
+
+    // If statement to not allow under 0
+    if (socks < 0) {
+      socks = 0;
+    }
+  }
+
+  // Variable for remaining pairs
+  let remainingPairs = Math.floor(socks / 2);
+
+  return remainingPairs;
 }
