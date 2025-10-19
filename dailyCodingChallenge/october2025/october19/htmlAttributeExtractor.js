@@ -21,5 +21,35 @@ return ["id, submit", "class, btn btn-primary"].
 */
 
 function extractAttributes(element) {
-  return element;
+  // Seperate opening tag from element
+  let openingTag = element.split('>')[0];
+
+  // Seperate attributes from opening tag
+  let attributes = openingTag.split(' ');
+  // Remove first array item
+  attributes.shift();
+  // Remove '/' if element was a void element
+  if (attributes[attributes.length - 1] === '/') {
+    attributes.pop();
+  }
+
+  // If array item has no attribute property, join with before item
+  for (let i = 0; i < attributes.length; i++) {
+    if (attributes[i].indexOf('=') === -1) {
+      // Place current valule inside previous property
+      attributes[i - 1] += ' ' + attributes[i];
+      // Remove current item
+      attributes.splice(i, 1);
+    }
+  }
+
+  // Pair property and values
+  for (let i = 0; i < attributes.length; i++) {
+    // replace '=' for ', ' for desired format
+    attributes[i] = attributes[i].replace('=', ', ');
+    // Remove ' or " around value
+    attributes[i] = attributes[i].replace(/["']/g, '');
+  }
+
+  return attributes;
 }
