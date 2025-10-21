@@ -6,5 +6,262 @@
     <title>Technical Documentation Page</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav id="navbar">
+      <header><h1>CSS</h1></header>
+
+      <a href="#basic_css" class="nav-link">Basic CSS</a>
+      <a href="#colors" class="nav-link">Colors</a>
+      <a href="#the_box_model" class="nav-link">The Box Model</a>
+      <a href="#flexbox" class="nav-link">Flexbox</a>
+      <a href="#grid" class="nav-link">Grid</a>
+    </nav>
+
+    <main id="main-doc">
+      <section id="basic_css" class="main-section">
+        <header><h2>Basic CSS</h2></header>
+
+        <p>
+          <b>What is CSS?:</b> Cascading Style Sheets (CSS) is a markup language
+          used to apply styles to HTML elements. CSS is used for colors,
+          background images, layouts and more.
+        </p>
+        <p>
+          <b>Basic Anatomy of a CSS Rule:</b> A CSS rule is made up of two main
+          parts: a selector and a declaration block. A selector is a pattern
+          used in CSS to identify and target specific HTML elements for styling.
+          A declaration block applies a set of styles for a given selector or
+          selectors.
+        </p>
+        <div class="example">
+          <p>Here is the general syntax of a CSS rule:</p>
+          <pre>
+                <code>
+                    selector {
+                        property: value;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <h3>Inline, Internal, and External CSS</h3>
+        <ul>
+          <li>
+            <b>Inline CSS:</b> These styles are written directly within an HTML
+            element using the style attribute. Most of the time you will not be
+            using inline CSS due to separation of concerns.
+          </li>
+          <li>
+            <b>Internal CSS:</b> These styles are written within the
+            <code>&lt;style&gt;</code> tags inside the head section of an HTML
+            document. This can be useful for creating short code examples, but
+            usually you will not need be using internal CSS.
+          </li>
+          <li>
+            <b>External CSS:</b> These styles are written in a separate CSS file
+            and linked to the HTML document using the link element in the head
+            section. For most projects, you will use an external CSS file over
+            internal or inline CSS.
+          </li>
+        </ul>
+      </section>
+
+      <section id="colors" class="main-section">
+        <header><h2>Colors</h2></header>
+
+        <p>
+          <b>Color Theory:</b> This is the study of how colors interact with
+          each other and how they affect our perception. It covers color
+          relationships, color harmony, and the psychological impact of color.
+        </p>
+
+        <h3>Color Schemes</h3>
+        <p>
+          <b>Analogous Color Schemes:</b> These color schemes create cohesive
+          and soothing experiences. They have analogous colors, which are
+          adjacent to each other in the color wheel.
+        </p>
+        <p>
+          <b>Complementary Color Schemes:</b> These color schemes create high
+          contrast and visual impact. Their colors are located on the opposite
+          ends of the color wheel, relative to each other.
+        </p>
+        <p>
+          <b>Triadic Color Scheme:</b> This color scheme has vibrant colors.
+          They are made from colors that are approximately equidistant from each
+          other. If they are connected, they form an equilateral triangle on the
+          color wheel.
+        </p>
+        <p>
+          <b>Monochromatic Color Scheme:</b> For this color scheme, all the
+          colors are derived from the same base color by adjusting its
+          lightness, darkness, and saturation. This evokes a feeling of unity
+          and harmony while still creating contrast.
+        </p>
+
+        <h3>Different Ways to Work with Colors in CSS</h3>
+        <ul>
+          <li>
+            <b>Named Colors:</b> These colors are predefined color names
+            recognized by browsers. Examples include blue, darkred, lightgreen.
+          </li>
+          <li>
+            <b>rgb() Function:</b> RGB stands for Red, Green, and Blue — the
+            primary colors of light. These three colors are combined in
+            different intensities to create a wide range of colors. the rgb()
+            function allows you to define colors using the RGB color model.
+          </li>
+          <li>
+            <b>hsl() Function:</b> HSL stands for Hue, Saturation, and Lightness
+            — three key components that define a color.
+          </li>
+          <li>
+            <b>Hexadecimal:</b> A hex code (short for hexadecimal code) is a
+            six-character string used to represent colors in the RGB color
+            model. The "hex" refers to the base-16 numbering system, which uses
+            digits 0 to 9 and letters A to F.
+          </li>
+        </ul>
+      </section>
+
+      <section id="the_box_model" class="main-section">
+        <header><h2>The Box Model</h2></header>
+
+        <p>
+          <b>Definition:</b> In the CSS box model, every element is surrounded
+          by a box. This box consists of four components: the content area,
+          padding, border, margin.
+        </p>
+        <p>
+          <b>Content Area:</b> The content area is the innermost part of the
+          box. It's the space that contains the actual content of an element,
+          like text or images.
+        </p>
+
+        <h3>Box components</h3>
+        <ul>
+          <li>
+            <b>padding:</b> The padding is the area immediately after the
+            content area. It's the space between the content area and the border
+            of an element.
+          </li>
+          <li>
+            <b>border:</b> The border is the outer edge or outline of an element
+            in the CSS box model. It's the visual boundary of the element.
+          </li>
+          <li>
+            <b>margin:</b> The margin is the space outside the border of an
+            element. It determines the distance between an element and other
+            elements around it.
+          </li>
+        </ul>
+      </section>
+
+      <section id="flexbox" class="main-section">
+        <header><h2>Flexbox</h2></header>
+
+        <p>
+          <b>Definition:</b> CSS flexbox is a one-dimensional layout model that
+          allows you to arrange elements in rows and columns within a container.
+        </p>
+        <p>
+          <b>Flex Model:</b> This model defines how flex items are arranged
+          within a flex container. Every flex container has two axes: the main
+          axis and the cross axis.
+        </p>
+
+        <h3>The flex-direction Property</h3>
+        <p>
+          <b>Definition:</b> This property sets the direction of the main axis.
+          The default value of flex-direction is row, which places all the flex
+          items on the same row, in the direction of your browser's default
+          language (left to right or right to left).
+        </p>
+        <div class="example">
+          <pre>
+                <code>
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <h3>The justify-content Property</h3>
+        <p>
+          <b>Definition:</b> This property aligns the child elements along the
+          main axis of the flex container.
+        </p>
+        <div class="example">
+          <pre>
+                <code>
+                    .container {
+                        display: flex;
+                        justify-content: center;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <h3>The align-items Property</h3>
+        <p>
+          <b>Definition:</b> This property is used to distribute items along the
+          cross axis. Remember that the cross axis is perpendicular to the main
+          axis.
+        </p>
+        <div class="example">
+          <pre>
+                <code>
+                    .container {
+                        display: flex;
+                        align-items: center;
+                    }
+                </code>
+            </pre>
+        </div>
+      </section>
+
+      <section id="grid" class="main-section">
+        <header><h2>Grid</h2></header>
+
+        <p>
+          <b>Definition:</b> CSS Grid is a two-dimensional layout system used to
+          create complex layouts in web pages. Grids will have rows and columns
+          with gaps between them. To define a grid layout, you would set the
+          display property to grid.
+        </p>
+
+        <div class="example">
+          <pre>
+                <code>
+                    .container {
+                        display: grid;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <p>
+          <b>The fr (Fractional) Unit:</b> This unit represents a fraction of
+          the space within the grid container. You can use the fr unit to create
+          flexible grids.
+        </p>
+        <p>
+          <b>Creating Gaps Between Tracks:</b> There are three ways to create
+          gaps between tracks in CSS grid. You can use the column-gap property
+          to create gaps between columns. You can use the row-gap property to
+          create gaps between rows. Or you can use the gap shorthand property to
+          create gaps between both rows and columns.
+        </p>
+      </section>
+    </main>
+    <div>
+      All information came from
+      <a href="https://www.freecodecamp.org/learn/" target="_blank"
+        >freeCodeCamp</a
+      >
+      courses
+    </div>
+  </body>
 </html>
