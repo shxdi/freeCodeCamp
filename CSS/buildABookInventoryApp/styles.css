@@ -1,1 +1,84 @@
- 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: antiquewhite;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background-image: linear-gradient(deepskyblue, lightblue);
+}
+
+th {
+  height: 25px;
+}
+
+tr[class='read'] {
+  background-image: linear-gradient(green, lightgreen);
+}
+
+tr[class='to-read'] {
+  background-image: linear-gradient(red, rgb(230, 158, 158));
+}
+
+tr[class='in-progress'] {
+  background-image: linear-gradient(yellow, lightyellow);
+}
+
+span {
+  display: inline-block;
+}
+
+tr[class='read'] span[class='status'] {
+  border: 1px solid darkgreen;
+  background-image: linear-gradient(darkgreen, green);
+}
+
+tr[class='to-read'] span[class='status'] {
+  border: 1px solid darkred;
+  background-image: linear-gradient(darkred, red);
+}
+
+tr[class='in-progress'] span[class='status'] {
+  border: 1px solid rgb(146, 146, 0);
+  background-image: linear-gradient(rgb(146, 146, 0), yellow);
+}
+
+tr span[class='status'] {
+  border-radius: 15px;
+  height: 20px;
+}
+
+span[class='status'],
+span[class^='rate'] {
+  height: 25px;
+  width: 100px;
+  padding: 5px;
+}
+
+span[class^='rate'] > span {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  height: 15px;
+  width: 15px;
+  background-color: darkgray;
+}
+
+span[class~='one'] span:first-child {
+  background-image: linear-gradient(deepskyblue, blue);
+}
+
+span[class~='two'] span:nth-child(-n + 2) {
+  background-image: linear-gradient(deepskyblue, blue);
+}
+
+span[class~='three'] span {
+  background-image: linear-gradient(deepskyblue, blue);
+}
