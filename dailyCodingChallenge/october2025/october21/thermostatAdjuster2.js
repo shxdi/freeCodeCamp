@@ -22,5 +22,36 @@ result (F = (C * 1.8) + 32).
 */
 
 function adjustThermostat(currentF, targetC) {
-  return currentF;
+  // Turn targetC into targetF
+  let targetF = targetC * 1.8 + 32;
+
+  // Subtract targetF from currentF
+  let adjustment = targetF - currentF;
+
+  // Variable for checking decimal
+  let decimalCheck = adjustment.toString().split('.');
+  // If contains numbers after decimal AND there is more than one decimal place...
+  if (decimalCheck[1] !== undefined && decimalCheck[1].length > 1) {
+    // Round to one decimal place
+    adjustment = adjustment.toFixed(1);
+  }
+
+  // If target is the same as current, return hold
+  if (adjustment === 0) {
+    return 'Hold';
+    // If target is greater than current, return heat
+  } else if (adjustment > 0) {
+    // If doesnt contain number after decimal, make it 0
+    if (decimalCheck[1] === undefined) {
+      adjustment += '.0';
+    }
+    return 'Heat: ' + adjustment + ' degrees Fahrenheit';
+    //If target is less than current, return cool
+  } else if (adjustment < 0) {
+    // If doesnt contain number after decimal, make it 0
+    if (decimalCheck[1] === undefined) {
+      adjustment += '.0';
+    }
+    return 'Cool: ' + adjustment * -1 + ' degrees Fahrenheit';
+  }
 }
