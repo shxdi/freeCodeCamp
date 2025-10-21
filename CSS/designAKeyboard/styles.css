@@ -142,3 +142,19 @@
   display: flex;
   gap: 5px;
 }
+
+@media screen and (max-width: 950px) {
+  #top-row {
+    display: none;
+  }
+
+  #keyboard-tkl {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  #keyboard-number-pad {
+    display: none;
+  }
+}
