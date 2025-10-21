@@ -5,9 +5,11 @@
 }
 
 #keyboard {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
   display: flex;
-  justify-content: center;
-  margin-top: 100px;
 }
 
 #keyboard-main {
@@ -57,4 +59,59 @@
 
 .six-and-quarter {
   flex: 6.25;
+}
+
+#top-row {
+  background-color: darkgray;
+  height: 62px;
+  width: 750px;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+#group-one,
+#group-two,
+#group-three,
+#group-four,
+#group-five {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  gap: 5px;
+}
+
+#group-one {
+  flex: 2;
+}
+
+#group-two,
+#group-three,
+#group-four {
+  flex: 4;
+}
+
+#group-five {
+  flex: 3;
+}
+
+#keyboard-tkl {
+  background-color: darkgray;
+
+  height: 312px;
+  width: 162px;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.tkl-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.top {
+  margin-bottom: 15px;
 }
