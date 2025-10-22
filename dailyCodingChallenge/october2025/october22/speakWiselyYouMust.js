@@ -27,5 +27,45 @@ think you will?"
 */
 
 function wiseSpeak(sentence) {
-  return sentence;
+  // Store punctuation mark
+  let punctuation = sentence.charAt(sentence.length - 1);
+  // Replace punctuation mark with ','
+  sentence = sentence.replace(punctuation, ',');
+  // Make sure everything is lowercase
+  sentence = sentence.toLowerCase();
+  // Turn string into an array
+  let wordArray = sentence.split(' ');
+
+  // Index for last word
+  let lastWordIndex = wordArray.length - 1;
+
+  // Loop for removing first word until at
+  for (let i = 0; i < wordArray.length; i++) {
+    // Check if last word is one of the key words
+    if (
+      wordArray[lastWordIndex] === 'have' ||
+      wordArray[lastWordIndex] === 'must' ||
+      wordArray[lastWordIndex] === 'are' ||
+      wordArray[lastWordIndex] === 'will' ||
+      wordArray[lastWordIndex] === 'can'
+    ) {
+      // When last word === a key word, break
+      break;
+    }
+
+    // Remove first word
+    let currentFirst = wordArray.shift();
+    // Add word to end of array
+    wordArray.push(currentFirst);
+  }
+
+  // Combine to final sentence
+  let wiseSentence = wordArray.join(' ');
+  // Capitalize first letter
+  wiseSentence = wiseSentence.charAt(0).toUpperCase() + wiseSentence.slice(1);
+  // Add punctuation
+  wiseSentence = wiseSentence + punctuation;
+
+  // Return new sentence
+  return wiseSentence;
 }
