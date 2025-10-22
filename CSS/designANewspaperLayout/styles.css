@@ -1,1 +1,95 @@
- 
+:root {
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+.newspaper-layout {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;
+  gap: 16px;
+  grid-template-areas:
+    'title title title'
+    'feature-article feature-article cover-image'
+    'secondary-article secondary-article cover-image'
+    'small-article1 small-article2 small-article3';
+}
+
+.title {
+  grid-area: title;
+}
+
+.feature-article {
+  grid-area: feature-article;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+}
+
+.cover-image {
+  grid-area: cover-image;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+}
+
+.small-article2 {
+  grid-area: small-article2;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+}
+
+.cover-image {
+  padding: 8px;
+}
+
+.cover-image img {
+  max-width: 100%;
+}
+
+h1 {
+  background-color: gray;
+  font-size: 3em;
+  padding: 8px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+article {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-article,
+.secondary-article,
+.cover-image {
+  background-color: darkgray;
+}
+
+.small-article1,
+.small-article2,
+.small-article3 {
+  background-color: lightgray;
+}
