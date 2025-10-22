@@ -6,5 +6,49 @@
     <title>Product Landing Page</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header id="header">
+      <div id="brand-container">
+        <img src="./wrench.svg" alt="" id="header-img" />
+        <h1 id="brand">Wrench</h1>
+      </div>
+      <nav id="nav-bar">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#notify" class="nav-link">Notify</a>
+      </nav>
+    </header>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <video height="320px" controls id="video">
+        <source src="./wrench.mp4" type="video/mp4" />
+      </video>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <img src="./wrench.jpg" alt="A wrench" />
+
+      <ul id="feature-list">
+        <li class="feature-item">Adjustable jaws</li>
+        <li class="feature-item">Made from real metal</li>
+        <li class="feature-item">Laser etched scale</li>
+      </ul>
+    </section>
+
+    <section id="notify">
+      <form action="https://www.freecodecamp.org/email-submit" id="form">
+        <label for="email">Get notified when this wrench is available!</label>
+        <input
+          type="email"
+          placeholder="Enter email address"
+          id="email"
+          name="email"
+          required
+        />
+        <input type="submit" id="submit" value="Notify Me" />
+      </form>
+    </section>
+  </body>
 </html>
