@@ -1,1 +1,60 @@
- 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./space.jpg');
+  background-size: cover;
+}
+
+.space {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 100px;
+  background-image: url(./earth.png);
+  border-radius: 50%;
+}
+
+.orbit {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  animation: orbit 5s linear infinite;
+}
+
+.moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 30px;
+  width: 30px;
+  transform: translate(-50%);
+  background-image: url(./moon.png);
+  border-radius: 50%;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
