@@ -1,1 +1,196 @@
- 
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  --color-main: #008cff;
+  --color-secondary: #004680;
+  --color-dark: #1c1c1c;
+  --color-light: #e4e4e4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--color-main);
+  box-shadow: 0 0 10px var(--color-dark);
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 16px;
+  margin-right: 16px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Main styling */
+
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-dark);
+}
+
+h1 {
+  font-size: 5em;
+  color: var(--color-light);
+}
+
+#welcome-section p {
+  font-size: 1.5em;
+  font-style: italic;
+  color: var(--color-main);
+}
+
+#project-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-secondary);
+}
+
+#project-title,
+#project-link {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+#project-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 75px;
+  padding-bottom: 25px;
+}
+
+#project-title h2 {
+  font-size: 3em;
+  color: var(--color-light);
+}
+
+#project-title hr {
+  width: 500px;
+  border: none;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  text-align: center;
+}
+
+#profile-link,
+.project-tile a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.project-tile a {
+  background-color: var(--color-dark);
+  padding: 16px;
+  font-size: 1.2em;
+}
+
+.project-tile a:hover::before,
+#profile-link:hover::before {
+  content: '< ';
+  color: var(--color-main);
+}
+
+.project-tile a:hover::after,
+#profile-link:hover::after {
+  content: ' />';
+  color: var(--color-main);
+}
+
+.project-tile a:hover,
+#profile-link:hover {
+  color: var(--color-main);
+}
+
+#project-link {
+  padding-top: 32px;
+  padding-bottom: 75px;
+}
+
+#profile-link {
+  background-color: var(--color-dark);
+  font-size: 1.6em;
+  padding: 16px;
+}
+
+#contact-section {
+  background-color: var(--color-dark);
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+#contact-section h2 {
+  color: var(--color-light);
+  font-size: 3em;
+}
+
+#contact-links {
+  display: flex;
+  gap: 32px;
+}
+
+#contact-section a {
+  color: var(--color-light);
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+#contact-links a:hover {
+  color: var(--color-main);
+  transform: translatey(5px);
+}
+
+/* Footer styling */
+
+footer {
+  background-color: var(--color-dark);
+  border-top: 5px solid var(--color-main);
+  height: 10vh;
+  color: var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+}
+
+footer p {
+  margin: 16px;
+}
+
+/* Media query */
+
+@media screen and (max-width: 950px) {
+  #project-section {
+    grid-template-columns: 1fr;
+  }
+}
