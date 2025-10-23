@@ -1,1 +1,115 @@
- 
+:root {
+  --trunk-color1: rgb(105, 81, 45);
+  --trunk-color2: rgb(78, 61, 36);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background styling */
+
+.sky {
+  background-color: lightblue;
+  height: 75vh;
+}
+
+.ground {
+  background-color: green;
+  height: 25vh;
+}
+
+/* Tree styling*/
+
+.tree {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  animation: windy 2s linear infinite;
+}
+
+.canopy {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  height: 300px;
+  width: 500px;
+  border-radius: 40%;
+}
+
+.canopy-branch {
+  position: absolute;
+  background-color: green;
+  height: 150px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.canopy-branch:nth-of-type(1) {
+  top: 50px;
+  left: -50px;
+}
+
+.canopy-branch:nth-of-type(2) {
+  top: -50px;
+  left: 100px;
+}
+
+.canopy-branch:nth-of-type(3) {
+  bottom: -50px;
+  left: 100px;
+}
+
+.canopy-branch:nth-of-type(4) {
+  top: -50px;
+  right: 75px;
+}
+
+.canopy-branch:nth-of-type(5) {
+  top: 50px;
+  right: -50px;
+}
+
+.tree-trunk {
+  background: linear-gradient(90deg, var(--trunk-color2), var(--trunk-color1));
+  height: 500px;
+  width: 100px;
+}
+
+.root-flare {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 250px;
+  border-bottom: 100px solid var(--trunk-color2);
+  border-right: 80px solid transparent;
+  border-left: 80px solid transparent;
+  border-radius: 50%;
+}
+
+/* Animation */
+
+@keyframes windy {
+  20% {
+    transform: rotate(0deg) translate(-50%, -35%);
+  }
+  40% {
+    transform: rotate(1deg) translate(-50%, -35%);
+  }
+  60% {
+    transform: rotate(0deg) translate(-50%, -35%);
+  }
+  80% {
+    transform: rotate(-1deg) translate(-50%, -35%);
+  }
+  100% {
+    transform: rotate(0deg) translate(-50%, -35%);
+  }
+}
