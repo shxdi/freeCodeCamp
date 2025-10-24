@@ -46,5 +46,39 @@ should return "Empty".
 */
 
 function dive(map, coordinates) {
-  return map;
+  // Varibles for search
+  let row = coordinates[0];
+  let column = coordinates[1];
+
+  // Variable for how many treasures exist on ocean floor
+  let treasures = 0;
+  // Loop to find how many treasures are on the ocean floor
+  for (let i = 0; i < map.length; i++) {
+    // Variable for current coordinate
+    let currentCoordinate = map[i];
+    // Loop to check each map coordinate
+    for (let i = 0; i < currentCoordinate.length; i++) {
+      if (currentCoordinate[i] === 'O') {
+        treasures++;
+      }
+    }
+  }
+
+  // Find target coordinate
+  let targetCoordinate = map[row][column];
+
+  // If statement for what we found at targetCoordinate
+  // If we found nothing
+  if (targetCoordinate === '-') {
+    return 'Empty';
+    // If we found a treasure that was previously found
+  } else if (targetCoordinate === 'X') {
+    return 'Found';
+  } // If we found a treasure that was unfound and but it was not the last unfound
+  else if (targetCoordinate === 'O' && treasures > 1) {
+    return 'Found';
+    // If we found a treasure that was unfound and it was the last unfound
+  } else if (targetCoordinate === 'O' && treasures === 1) {
+    return 'Recovered';
+  }
 }
