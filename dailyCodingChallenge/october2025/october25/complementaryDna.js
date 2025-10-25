@@ -16,5 +16,20 @@ For example, given "ACGT", return "TGCA".
 */
 
 function complementaryDNA(strand) {
-  return strand;
+  // Varibale for complementary strand
+  let complementaryStrand = '';
+  // Loop changing letters
+  for (let i = 0; i < strand.length; i++) {
+    if (strand[i] === 'A') {
+      complementaryStrand += 'T';
+    } else if (strand[i] === 'T') {
+      complementaryStrand += 'A';
+    } else if (strand[i] === 'C') {
+      complementaryStrand += 'G';
+    } else if (strand[i] === 'G') {
+      complementaryStrand += 'C';
+    }
+  }
+
+  return complementaryStrand;
 }
