@@ -18,5 +18,31 @@ less than one minute.
 */
 
 function format(seconds) {
-  return seconds;
+  let formattedTime;
+  let hours;
+  let minutes = 0;
+
+  if (seconds > 3599) {
+    hours = Math.floor(seconds / 3600);
+    seconds -= hours * 3600;
+  }
+  if (seconds > 59) {
+    minutes = Math.floor(seconds / 60);
+    seconds -= minutes * 60;
+  }
+
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  if (minutes < 10 && hours > 0) {
+    minutes = '0' + minutes;
+  }
+
+  if (hours > 0) {
+    formattedTime = `${hours}:${minutes}:${seconds}`;
+  } else {
+    formattedTime = `${minutes}:${seconds}`;
+  }
+
+  return formattedTime;
 }
