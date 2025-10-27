@@ -13,5 +13,11 @@ For example, given 5, return "12345".
 */
 
 function sequence(n) {
-  return n;
+  let sequence = '';
+
+  for (let i = 0; i < n; i++) {
+    sequence += i + 1;
+  }
+
+  return sequence;
 }
