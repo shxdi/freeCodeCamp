@@ -27,5 +27,36 @@ should return "Visit Us".
 */
 
 function navigate(commands) {
-  return commands;
+  let currentPage = 0;
+  let pages = ['Home'];
+
+  // Loop over commands array
+  for (let i = 0; i < commands.length; i++) {
+    // If current command is new page
+    if (commands[i].includes('Visit')) {
+      // Loop over previous pages
+      for (let current = i; current > 0; current--) {
+        // If previous pages were 'Back'
+        if (commands[current] === 'Back') {
+          // Remove forward history
+          pages.pop();
+        }
+      }
+
+      pages.push(commands[i].slice(6));
+      currentPage++;
+      // If current command is back and not at home page
+    } else if (commands[i] === 'Back' && pages[currentPage - 1] !== undefined) {
+      currentPage--;
+    } else if (
+      // If current command is forward and not at end of forward history
+      commands[i] === 'Forward' &&
+      pages[currentPage + 1] !== undefined
+    ) {
+      currentPage++;
+    }
+  }
+
+  // Return current page
+  return pages[currentPage];
 }
