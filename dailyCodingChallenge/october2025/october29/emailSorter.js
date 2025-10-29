@@ -1,14 +1,14 @@
 /*
-On October 29, 1971, the first email ever was sent, introducing the username@domain format we
+On October 29, 1971, the first email ever was sent, introducing the username@domain format we 
 still use. Now, there are billions of email addresses.
 
-In this challenge, you are given a list of email addresses and need to sort them alphabetically
-by domain name first (the part after the @), and the username second(the part before the @).
+In this challenge, you are given a list of email addresses and need to sort them alphabetically 
+by domain name first (the part after the @), and username second (the part before the @).
 
 Sorting should be case-insensitive.
 If more than one email has the same domain, sort them by their username.
 Return an array of the sorted addresses.
-Returned addresses should retian their original case.
+Returned addresses should retain their original case.
 For example, given ["jill@mail.com", "john@example.com", "jane@example.com"], return 
 ["jane@example.com", "john@example.com", "jill@mail.com"]
 */
@@ -28,5 +28,30 @@ For example, given ["jill@mail.com", "john@example.com", "jane@example.com"], re
 */
 
 function sort(emails) {
-  return emails;
+  let sortedEmails = emails.toSorted(compare);
+
+  return sortedEmails;
+}
+
+function compare(a, b) {
+  let aSeperated = a.toLowerCase().split('@');
+  let bSeperated = b.toLowerCase().split('@');
+
+  let aDomain = aSeperated[1];
+  let bDomain = bSeperated[1];
+
+  let aUsername = aSeperated[0];
+  let bUsername = bSeperated[0];
+
+  if (aDomain < bDomain) {
+    return -1;
+  } else if (aDomain > bDomain) {
+    return 1;
+  }
+
+  if (aUsername < bUsername) {
+    return -1;
+  } else if (aUsername > bUsername) {
+    return 1;
+  }
 }
