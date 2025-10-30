@@ -15,5 +15,26 @@ prime number: 11.
 */
 
 function nthPrime(n) {
-  return n;
+  let primeNumbers = [];
+  let currentNumber = 2;
+  let isPrime;
+
+  while (n > primeNumbers.length) {
+    isPrime = true;
+
+    for (let i = 2; i <= Math.sqrt(currentNumber); i++) {
+      if (currentNumber % i === 0) {
+        isPrime = false;
+      }
+    }
+
+    if (isPrime) {
+      console.log(isPrime);
+      primeNumbers.push(currentNumber);
+    }
+
+    currentNumber++;
+  }
+
+  return primeNumbers[n - 1];
 }
