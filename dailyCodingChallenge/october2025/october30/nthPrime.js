@@ -29,7 +29,6 @@ function nthPrime(n) {
     }
 
     if (isPrime) {
-      console.log(isPrime);
       primeNumbers.push(currentNumber);
     }
 
