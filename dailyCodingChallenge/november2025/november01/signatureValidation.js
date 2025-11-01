@@ -25,5 +25,37 @@ Check if the computed signature matches the provided signature.
 */
 
 function verify(message, key, signature) {
-  return message;
+  let messageValue = 0;
+  let keyValue = 0;
+
+  let messageChars = message.split('');
+  let keyChars = key.split('');
+
+  let lowerPattern = /[a-z]/g;
+  let upperPattern = /[A-Z]/g;
+
+  for (let i = 0; i < messageChars.length; i++) {
+    if (messageChars[i].match(lowerPattern)) {
+      messageValue += messageChars[i].charCodeAt() - 96;
+    } else if (messageChars[i].match(upperPattern)) {
+      messageValue += messageChars[i].charCodeAt() - 38;
+    }
+  }
+
+  for (let i = 0; i < keyChars.length; i++) {
+    if (keyChars[i].match(lowerPattern)) {
+      keyValue += keyChars[i].charCodeAt() - 96;
+    } else if (keyChars[i].match(upperPattern)) {
+      keyValue += keyChars[i].charCodeAt() - 38;
+    }
+  }
+
+  let sigValue = messageValue + keyValue;
+
+  if (signature === sigValue) {
+    return true;
+  } else {
+    return false;
+  }
+  return;
 }
