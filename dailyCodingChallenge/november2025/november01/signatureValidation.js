@@ -57,5 +57,4 @@ function verify(message, key, signature) {
   } else {
     return false;
   }
-  return;
 }
