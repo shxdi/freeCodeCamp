@@ -28,5 +28,26 @@ Return the number of total infected computers after the given amount of days hav
 */
 
 function infected(days) {
-  return days;
+  let totalInfected;
+
+  for (let i = 0; i <= days; i++) {
+    if (i === 0) {
+      totalInfected = 1;
+    } else {
+      totalInfected *= 2;
+    }
+
+    if (i % 3 === 0) {
+      let patch = Math.round(totalInfected * 0.2);
+      totalInfected -= patch;
+    }
+  }
+
+  return totalInfected;
 }
+
+/*
+For infected(25) I am getting 5217728, it wants 5217638. I did the math out to make sure it
+was not incorrect and using a calculator I get 5217728 aswell. So im not sure why they are 
+different but the calculator is the same as what I get with this function.
+*/
