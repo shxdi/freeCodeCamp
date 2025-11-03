@@ -13,5 +13,8 @@ Words are any sequence of non-space characters and are separated by a single spa
 */
 
 function countWords(sentence) {
-  return sentence;
+  let words = sentence.split(' ');
+  let wordCount = words.length;
+
+  return wordCount;
 }
