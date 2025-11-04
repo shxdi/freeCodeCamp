@@ -20,5 +20,16 @@ Return the images in the same order they appear in the input array.
 */
 
 function imageSearch(images, term) {
-  return images;
+  let foundImages = [];
+  term = term.toLowerCase();
+
+  for (let i = 0; i < images.length; i++) {
+    let currentImage = images[i].toLowerCase();
+
+    if (currentImage.includes(term)) {
+      foundImages.push(images[i]);
+    }
+  }
+
+  return foundImages;
 }
