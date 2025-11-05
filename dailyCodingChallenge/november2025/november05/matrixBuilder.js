@@ -18,5 +18,15 @@ For example, given 2 and 3, return:
 */
 
 function buildMatrix(rows, cols) {
-  return rows;
+  let matrix = [];
+
+  for (let i = 0; i < rows; i++) {
+    matrix.push([]);
+
+    for (let j = 0; j < cols; j++) {
+      matrix[i].push(0);
+    }
+  }
+
+  return matrix;
 }
