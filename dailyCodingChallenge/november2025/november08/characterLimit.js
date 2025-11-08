@@ -23,6 +23,4 @@ function canPost(message) {
   } else {
     return 'invalid post';
   }
-
-  return message;
 }
