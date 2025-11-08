@@ -16,5 +16,13 @@ media post.") should return "invalid post".
 */
 
 function canPost(message) {
+  if (message.length < 40) {
+    return 'short post';
+  } else if (message.length < 80) {
+    return 'long post';
+  } else {
+    return 'invalid post';
+  }
+
   return message;
 }
