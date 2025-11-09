@@ -88,10 +88,6 @@ function findWord(matrix, word) {
       indices.push(possibleFirsts[i]);
       indices.push([endRow, endColumn]);
     }
-
-    if (isThisColumn) {
-      console.log(possibleFirsts[i][1]);
-    }
   }
 
   return indices;
