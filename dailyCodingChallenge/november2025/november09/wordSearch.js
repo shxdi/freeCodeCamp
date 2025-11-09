@@ -45,5 +45,100 @@ the "t" (end of the word).
 */
 
 function findWord(matrix, word) {
-  return matrix;
+  let indices = [];
+  let firstLetter = word[0];
+
+  let possibleFirsts = findPossibleIndices(matrix, firstLetter);
+
+  for (let i = 0; i < possibleFirsts.length; i++) {
+    let row = possibleFirsts[i][0];
+    let start = possibleFirsts[i][1];
+
+    let isThisRow = checkRow(matrix[row], word, start);
+
+    if (isThisRow === 'left') {
+      indices.push(possibleFirsts[i]);
+      indices.push([i, start - word.length + 1]);
+    } else if (isThisRow === 'right') {
+      indices.push(possibleFirsts[i]);
+      indices.push([i, start + word.length - 1]);
+    }
+  }
+
+  for (let i = 0; i < possibleFirsts.length; i++) {
+    let column = [];
+    let start = possibleFirsts[i][0];
+
+    for (let row of matrix) {
+      column.push(row[possibleFirsts[i][1]]);
+    }
+
+    let isThisColumn = checkColumn(column, word, start);
+
+    if (isThisColumn === 'up') {
+      let endRow = start - word.length + 1;
+      let endColumn = possibleFirsts[i][1];
+
+      indices.push(possibleFirsts[i]);
+      indices.push([endRow, endColumn]);
+    } else if (isThisColumn === 'down') {
+      let endRow = start + word.length - 1;
+      let endColumn = possibleFirsts[i][1];
+
+      indices.push(possibleFirsts[i]);
+      indices.push([endRow, endColumn]);
+    }
+
+    if (isThisColumn) {
+      console.log(possibleFirsts[i][1]);
+    }
+  }
+
+  return indices;
+}
+
+function findPossibleIndices(matrix, letter) {
+  let indices = [];
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === letter) {
+        indices.push([i, j]);
+      }
+    }
+  }
+
+  return indices;
+}
+
+function checkRow(row, word, start) {
+  let right = row.slice(start).join('');
+  let left = row
+    .slice(0, start + 1)
+    .reverse()
+    .join('');
+
+  if (left.includes(word)) {
+    return 'left';
+  } else if (right.includes(word)) {
+    return 'right';
+  } else {
+    return false;
+  }
+}
+
+function checkColumn(column, word, start) {
+  let down = column.slice(start).join('');
+  let up = column
+    .slice(0, start + 1)
+    .reverse()
+    .join('');
+
+  if (down.includes(word)) {
+    return 'down';
+  } else if (up.includes(word)) {
+    return 'up';
+  } else {
+    return false;
+  }
 }
