@@ -75,3 +75,7 @@ function seedCards(seedCategory) {
     `;
   });
 }
+
+selectContainer.addEventListener('change', () => {
+  productsContainer.innerHTML = seedCards(selectContainer.value).join('');
+});
