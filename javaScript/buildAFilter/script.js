@@ -45,3 +45,6 @@ const seedArr = [
   { category: 'herb', type: 'Bee Balm', typeClass: 'bee-balm', name: 'Lemon' },
   { category: 'herb', type: 'Basil', typeClass: 'basil', name: 'Persian' },
 ];
+
+const selectContainer = document.querySelector('select');
+const productsContainer = document.querySelector('.products-container');
