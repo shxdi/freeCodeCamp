@@ -87,3 +87,46 @@ footer p {
 footer a {
   color: lightgreen;
 }
+
+.carrot {
+  background-image: url('./carrot-purpleDragon.avif');
+  background-size: cover;
+}
+
+.pepper {
+  background-image: url('./pepper-sweetMaruga.avif');
+  background-size: cover;
+}
+
+.lettuce {
+  background-image: url('./lettuce-spottedAleppoSyrian.avif');
+  background-size: cover;
+}
+.tomato {
+  background-image: url('./tomatoSpoon.avif');
+  background-size: cover;
+}
+.cosmos {
+  background-image: url('./cosmos-apricotLemonade.avif');
+  background-size: cover;
+}
+.marigold {
+  background-image: url('./marigold-orangeFlame.avif');
+  background-size: cover;
+}
+.sunflower {
+  background-image: url('./sunflower-lemonQueen.avif');
+  background-size: cover;
+}
+.catmint {
+  background-image: url('./catmint-grandview.avif');
+  background-size: cover;
+}
+.bee-balm {
+  background-image: url('./beeBalm-lemon.avif');
+  background-size: cover;
+}
+.basil {
+  background-image: url('./persian-basil.avif');
+  background-size: cover;
+}
