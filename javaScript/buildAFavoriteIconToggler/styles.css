@@ -1,1 +1,37 @@
- 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  height: 250px;
+  width: 200px;
+
+  margin: 250px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+li {
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+button {
+  font-size: 20px;
+  border: none;
+}
