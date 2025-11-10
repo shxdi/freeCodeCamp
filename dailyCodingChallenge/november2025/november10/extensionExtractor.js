@@ -16,5 +16,17 @@ The extension should be returned as-is, preserving case.
 */
 
 function getExtension(filename) {
-  return filename;
+  let fileParts = filename.split('.');
+  let partsAmount = fileParts.length;
+  let extension = fileParts[partsAmount - 1];
+
+  if (partsAmount <= 1) {
+    return 'none';
+  }
+
+  if (extension === '') {
+    return 'none';
+  } else {
+    return extension;
+  }
 }
