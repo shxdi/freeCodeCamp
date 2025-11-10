@@ -48,3 +48,30 @@ const seedArr = [
 
 const selectContainer = document.querySelector('select');
 const productsContainer = document.querySelector('.products-container');
+
+function seedCards(seedCategory) {
+  let seeds;
+
+  if (seedCategory === 'all') {
+    seeds = seedArr;
+  } else {
+    seeds = seedArr.filter((seedObj) => {
+      if (seedObj.category === seedCategory) {
+        return seedObj;
+      }
+    });
+  }
+
+  return seeds.map((seedObj) => {
+    let type = seedObj.type;
+    let typeClass = seedObj.typeClass;
+    let name = seedObj.name;
+
+    return `
+    <div class='card ${typeClass}'>
+        <h2>${type}</h2>
+        <p>${name}</p>
+    </div>    
+    `;
+  });
+}
