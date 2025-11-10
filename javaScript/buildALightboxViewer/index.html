@@ -5,5 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lightbox Viewer</title>
   </head>
-  <body></body>
+  <body>
+    <div class="gallery">
+      <img
+        src="./mountain-lake-one-thumbnail.jpg"
+        alt="A lake with trees and mountains in the background"
+        class="gallery-item"
+      />
+      <img
+        src="./mountain-lake-two-thumbnail.jpg"
+        alt="A beautiful blue lake with boulders on the shore and mountains behind it"
+        class="gallery-item"
+      />
+      <img
+        src="./mountain-lake-three-thumbnail.jpg"
+        alt="Wetlands and a lake at the base of a mountain"
+        class="gallery-item"
+      />
+    </div>
+
+    <div class="lightbox">
+      <button id="close-btn"><img src="./close.svg" /></button>
+      <img src="" id="lightbox-image" />
+    </div>
+  </body>
 </html>
