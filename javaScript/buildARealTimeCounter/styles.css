@@ -1,1 +1,61 @@
- 
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  background-color: lightblue;
+}
+
+textarea {
+  height: 175px;
+  margin: 0 32px;
+  padding: 8px;
+  font-size: 1.3em;
+}
+
+/*
+<!--
+This placeholder text of <p> should be replaced with the current count of characters in the 
+textarea element.
+
+When the #text-input element contains the text hello coder the #char-count element should 
+contain the text "Character Count: 11/50"
+
+When the #text-input element contains the text i am a programmer the #char-count element 
+should contain the text "Character Count: 17/50"
+
+When the #text-input element contains the text hello world the #char-count element should 
+contain the text "Character Count: 11/50"
+
+When the #text-input element contains the text I am learning a new language and it is called 
+c++. the #char-count element should contain the text "Character Count: 50/50". NOTE: While 
+the maxlength attribute would achieve the correct functionality, this lab requires a 
+JavaScript only solution.
+
+The user should not be able to enter more than 50 characters in the textarea element. When 
+the character count reaches 50, any extra input should be automatically trimmed and the text 
+Character Count: 50/50 should be displayed in red.
+-->
+*/
