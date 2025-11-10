@@ -1,6 +1,12 @@
 const textArea = document.querySelector('textarea');
 const charCount = document.querySelector('#char-count');
 
+function updateCount() {
+  let currentChars = textArea.value.length;
+
+  charCount.innerHTML = `<p id="char-count">Character Count: ${currentChars}/50</p>`;
+}
+
 /*
 <!--
 This placeholder text of <p> should be replaced with the current count of characters in the 
