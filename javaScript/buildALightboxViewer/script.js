@@ -13,3 +13,9 @@ gallery.addEventListener('click', (event) => {
   lightbox.classList.add('show');
   lightboxImg.setAttribute('src', newImgSrc);
 });
+
+lightbox.addEventListener('click', (event) => {
+  if (event.target !== lightboxImg) {
+    lightbox.classList.remove('show');
+  }
+});
