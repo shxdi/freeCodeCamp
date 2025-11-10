@@ -7,6 +7,8 @@ function updateCount() {
   charCount.innerHTML = `<p id="char-count">Character Count: ${currentChars}/50</p>`;
 }
 
+textArea.addEventListener('input', updateCount);
+
 /*
 <!--
 This placeholder text of <p> should be replaced with the current count of characters in the 
