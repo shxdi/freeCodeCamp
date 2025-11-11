@@ -1,4 +1,5 @@
 // Fill board with given numbers
+
 const startingGrid = [
   ['', '4', '6', '', '', '8', '', '', ''],
   ['', '5', '', '', '9', '6', '', '', '4'],
@@ -21,7 +22,7 @@ subGrids.forEach((gridElement) => {
   children.forEach((subGridElement) => {
     if (subGridElement.nodeName === 'DIV') {
       subGridElement.textContent = startingGrid[currentGrid][currentSubGrid];
-
+      subGridElement.classList.add('locked');
       currentSubGrid++;
     }
   });
