@@ -25,6 +25,7 @@ subGrids.forEach((gridElement) => {
 
       if (subGridElement.textContent !== '') {
         subGridElement.classList.add('locked');
+        subGridElement.classList.add('bold');
       }
 
       currentSubGrid++;
