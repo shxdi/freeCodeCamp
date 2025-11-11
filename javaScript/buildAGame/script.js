@@ -60,3 +60,12 @@ function selectNum(event) {
 
   event.target.classList.add('selected');
 }
+
+// Adding selected number to grid
+const grid = document.querySelector('.grid');
+
+grid.addEventListener('click', (event) => {
+  if (!event.target.classList.contains('locked')) {
+    event.target.textContent = selectedNum;
+  }
+});
