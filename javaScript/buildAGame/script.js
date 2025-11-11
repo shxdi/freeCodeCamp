@@ -22,7 +22,11 @@ subGrids.forEach((gridElement) => {
   children.forEach((subGridElement) => {
     if (subGridElement.nodeName === 'DIV') {
       subGridElement.textContent = startingGrid[currentGrid][currentSubGrid];
-      subGridElement.classList.add('locked');
+
+      if (subGridElement.textContent !== '') {
+        subGridElement.classList.add('locked');
+      }
+
       currentSubGrid++;
     }
   });
