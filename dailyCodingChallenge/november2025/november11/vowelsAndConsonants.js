@@ -18,5 +18,23 @@ For example, given "Hello World", return [3, 7].
 */
 
 function count(str) {
-  return str;
+  let vowelCount = 0;
+  let vowels = 'aeiou';
+  let consonantCount = 0;
+  let consonants = 'bcdfghjklmnpqrstvwxyz';
+  let letters = str.toLowerCase().split('');
+  let letterCounts = [];
+
+  for (let letter of letters) {
+    if (vowels.includes(letter)) {
+      vowelCount++;
+    } else if (consonants.includes(letter)) {
+      consonantCount++;
+    }
+  }
+
+  letterCounts.push(vowelCount);
+  letterCounts.push(consonantCount);
+
+  return letterCounts;
 }
