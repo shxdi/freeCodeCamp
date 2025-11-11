@@ -1,3 +1,5 @@
+// Selecting number
+
 const availableNums = document.querySelector('.available-nums');
 const numContainers = document.querySelectorAll('.available-nums div');
 
