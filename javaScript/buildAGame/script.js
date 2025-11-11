@@ -10,12 +10,12 @@ const startingGrid = [
   ['4', '', '5', '', '', '', '9', '2', '8'],
   ['', '8', '7', '4', '', '2', '5', '', '6'],
 ];
-const grid = document.querySelectorAll('.sub-grid');
+const subGrids = document.querySelectorAll('.sub-grid');
 
 let currentGrid = 0;
 let currentSubGrid = 0;
 
-grid.forEach((gridElement) => {
+subGrids.forEach((gridElement) => {
   let children = gridElement.childNodes;
 
   children.forEach((subGridElement) => {
