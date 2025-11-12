@@ -1,7 +1,7 @@
 const themesArr = [
-  { name: 'preferred', message: 'This is your preferred theme' },
-  { name: 'light', message: 'This is the light theme' },
-  { name: 'dark', message: 'This is the dark theme' },
+  { name: 'preferred', message: 'This is your preferred theme.' },
+  { name: 'light', message: 'This is the light theme.' },
+  { name: 'dark', message: 'This is the dark theme.' },
 ];
 
 const themeBtn = document.getElementById('theme-switcher-button');
@@ -17,4 +17,24 @@ themeBtn.addEventListener('click', () => {
     themeBtn.setAttribute('aria-expanded', 'true');
     themeDropdown.toggleAttribute('hidden');
   }
+});
+
+const body = document.querySelector('body');
+const themeMsg = document.getElementById('theme-message');
+
+themeDropdown.addEventListener('click', (event) => {
+  let themeName = event.target.getAttribute('id');
+  let msg;
+
+  themesArr.forEach((theme) => {
+    if (theme.name === themeName.slice(6)) {
+      msg = theme.message;
+    }
+  });
+
+  body.setAttribute('class', themeName);
+  themeMsg.innerHTML = msg;
+
+  themeBtn.setAttribute('aria-expanded', 'false');
+  themeDropdown.toggleAttribute('hidden');
 });
