@@ -1,1 +1,39 @@
- 
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#theme-switcher-button {
+  height: 40px;
+  width: 175px;
+  font-size: 1.3em;
+  border: 1px solid;
+}
+
+#theme-dropdown {
+  position: absolute;
+  top: 40px;
+}
+
+#theme-dropdown li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  height: 50px;
+  width: 200px;
+  padding-left: 16px;
+  font-size: 1.1em;
+}
+
+#theme-message {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%);
+}
