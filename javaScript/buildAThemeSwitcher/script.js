@@ -34,7 +34,7 @@ themeDropdown.addEventListener('click', (event) => {
   let themeName = event.target.getAttribute('id');
   let msg;
 
-  themesArr.forEach((theme) => {
+  themes.forEach((theme) => {
     if (theme.name === themeName.slice(6)) {
       msg = theme.message;
     }
