@@ -46,5 +46,3 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 } else {
   preferredTheme = 'light';
 }
-
-console.log(preferredTheme);
