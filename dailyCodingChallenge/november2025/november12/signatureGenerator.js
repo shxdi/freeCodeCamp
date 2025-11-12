@@ -28,6 +28,22 @@ Tester at AcmeCorp".
 */
 
 function generateSignature(name, title, company) {
-  let signature;
-  return name;
+  let signature = [];
+  let firstLetter = name[0].toLowerCase();
+
+  let prefixOne = 'abcdefghi';
+  let prefixTwo = 'jklmnopqr';
+  let prefixThree = 'stuvwxyz';
+
+  if (prefixOne.includes(firstLetter)) {
+    signature.push(`>>${name}`);
+  } else if (prefixTwo.includes(firstLetter)) {
+    signature.push(`--${name}`);
+  } else if (prefixThree.includes(firstLetter)) {
+    signature.push(`::${name}`);
+  }
+
+  signature.push(`${title} at ${company}`);
+
+  return signature.join(', ');
 }
