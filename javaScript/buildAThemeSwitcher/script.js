@@ -22,6 +22,14 @@ themeBtn.addEventListener('click', () => {
 const body = document.querySelector('body');
 const themeMsg = document.getElementById('theme-message');
 
+let preferredTheme;
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  preferredTheme = 'dark';
+} else {
+  preferredTheme = 'light';
+}
+
 themeDropdown.addEventListener('click', (event) => {
   let themeName = event.target.getAttribute('id');
   let msg;
@@ -34,15 +42,12 @@ themeDropdown.addEventListener('click', (event) => {
 
   body.setAttribute('class', themeName);
   themeMsg.innerHTML = msg;
+  console.log(themeName);
+
+  if (themeName === 'theme-preferred' && preferredTheme === 'dark') {
+    body.classList.add('theme-dark');
+  }
 
   themeBtn.setAttribute('aria-expanded', 'false');
   themeDropdown.toggleAttribute('hidden');
 });
-
-let preferredTheme;
-
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  preferredTheme = 'dark';
-} else {
-  preferredTheme = 'light';
-}
