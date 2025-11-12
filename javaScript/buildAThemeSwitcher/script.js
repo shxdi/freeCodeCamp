@@ -42,7 +42,6 @@ themeDropdown.addEventListener('click', (event) => {
 
   body.setAttribute('class', themeName);
   themeMsg.innerHTML = msg;
-  console.log(themeName);
 
   if (themeName === 'theme-preferred' && preferredTheme === 'dark') {
     body.classList.add('theme-dark');
