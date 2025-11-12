@@ -1,5 +1,7 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
+  --lightmode-main: #add8e6;
+  --lightmode-secondary: #808080;
 }
 
 * {
@@ -12,12 +14,20 @@
   height: 40px;
   width: 175px;
   font-size: 1.3em;
-  border: 1px solid;
+  border: none;
+  background-color: var(--lightmode-main);
+}
+
+#theme-switcher-button:hover {
+  color: var(--lightmode-main);
+  background-color: var(--lightmode-secondary);
 }
 
 #theme-dropdown {
   position: absolute;
   top: 40px;
+
+  box-shadow: 1px 1px 3px var(--lightmode-secondary);
 }
 
 #theme-dropdown li {
@@ -29,6 +39,11 @@
   width: 200px;
   padding-left: 16px;
   font-size: 1.1em;
+}
+
+#theme-dropdown li:hover {
+  color: var(--lightmode-main);
+  background-color: var(--lightmode-secondary);
 }
 
 #theme-message {
