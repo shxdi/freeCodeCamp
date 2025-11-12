@@ -38,3 +38,13 @@ themeDropdown.addEventListener('click', (event) => {
   themeBtn.setAttribute('aria-expanded', 'false');
   themeDropdown.toggleAttribute('hidden');
 });
+
+let preferredTheme;
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  preferredTheme = 'dark';
+} else {
+  preferredTheme = 'light';
+}
+
+console.log(preferredTheme);
