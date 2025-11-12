@@ -21,6 +21,7 @@ themeBtn.addEventListener('click', () => {
 
 const body = document.querySelector('body');
 const themeMsg = document.getElementById('theme-message');
+const dropdownElements = document.querySelectorAll('[role=menuitem]');
 
 let preferredTheme;
 
@@ -30,23 +31,25 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   preferredTheme = 'light';
 }
 
-themeDropdown.addEventListener('click', (event) => {
-  let themeName = event.target.getAttribute('id');
-  let msg;
+dropdownElements.forEach((element) => {
+  element.addEventListener('click', (event) => {
+    let themeName = event.target.getAttribute('id');
+    let msg;
 
-  themes.forEach((theme) => {
-    if (theme.name === themeName.slice(6)) {
-      msg = theme.message;
+    themes.forEach((theme) => {
+      if (theme.name === themeName.slice(6)) {
+        msg = theme.message;
+      }
+    });
+
+    body.setAttribute('class', themeName);
+    themeMsg.innerHTML = msg;
+
+    if (themeName === 'theme-preferred' && preferredTheme === 'dark') {
+      body.classList.add('theme-dark');
     }
+
+    themeBtn.setAttribute('aria-expanded', 'false');
+    themeDropdown.toggleAttribute('hidden');
   });
-
-  body.setAttribute('class', themeName);
-  themeMsg.innerHTML = msg;
-
-  if (themeName === 'theme-preferred' && preferredTheme === 'dark') {
-    body.classList.add('theme-dark');
-  }
-
-  themeBtn.setAttribute('aria-expanded', 'false');
-  themeDropdown.toggleAttribute('hidden');
 });
