@@ -18,5 +18,20 @@ Make sure the calculation ignores your local timezone.
 */
 
 function daysUntilWeekend(dateString) {
-  return dateString;
+  switch (new Date(dateString).getDay()) {
+    case 0:
+      return '5 days until the weekend.';
+    case 1:
+      return '4 days until the weekend.';
+    case 2:
+      return '3 days until the weekend.';
+    case 3:
+      return '2 days until the weekend.';
+    case 4:
+      return '1 day until the weekend.';
+    case 5:
+      return "It's the weekend!";
+    case 6:
+      return "It's the weekend!";
+  }
 }
