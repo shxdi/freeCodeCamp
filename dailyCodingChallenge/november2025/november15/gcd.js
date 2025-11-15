@@ -16,5 +16,29 @@ For example, the divisors of 4 are 1, 2, and 4. The divisors of 6 are 1, 2, 3, a
 */
 
 function gcd(x, y) {
-  return x;
+  let xDivisors = [];
+  let yDivisors = [];
+  let greatestCommon;
+
+  for (let i = 1; i < x + 1; i++) {
+    if (x % i === 0) {
+      xDivisors.push(i);
+    }
+  }
+
+  for (let i = 1; i < y + 1; i++) {
+    if (y % i === 0) {
+      yDivisors.push(i);
+    }
+  }
+
+  xDivisors.forEach((num) => {
+    for (let i = 0; i < yDivisors.length; i++) {
+      if (yDivisors[i] === num) {
+        greatestCommon = num;
+      }
+    }
+  });
+
+  return greatestCommon;
 }
