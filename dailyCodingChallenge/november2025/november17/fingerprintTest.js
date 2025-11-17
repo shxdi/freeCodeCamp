@@ -21,5 +21,23 @@ should return false.
 */
 
 function isMatch(fingerprintA, fingerprintB) {
-  return fingerprintA;
+  if (fingerprintA.length !== fingerprintB.length) {
+    return false;
+  }
+
+  let aArr = fingerprintA.split('');
+  let bArr = fingerprintB.split('');
+  let uniqueCharCount = 0;
+
+  for (let i = 0; i < aArr.length; i++) {
+    if (aArr[i] !== bArr[i]) {
+      uniqueCharCount++;
+    }
+  }
+
+  if (uniqueCharCount > fingerprintA.length / 10) {
+    return false;
+  }
+
+  return true;
 }
