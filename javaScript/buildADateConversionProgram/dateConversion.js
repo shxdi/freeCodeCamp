@@ -12,6 +12,8 @@ function formatDateMMDDYYYY(date) {
 function formatDateLong(date) {
   const options = {
     month: 'long',
+    day: 'numeric',
+    year: 'numeric',
   };
   let formattedDate = date.toLocaleDateString('en-US', options);
 
