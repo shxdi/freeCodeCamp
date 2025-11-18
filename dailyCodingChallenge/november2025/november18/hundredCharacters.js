@@ -17,5 +17,15 @@ challenges daily challenges daily challenges daily challenge".
 */
 
 function oneHundred(chars) {
-  return chars;
+  let length = chars.length;
+  let iterations = Math.ceil(100 / length);
+  let hundredChars = '';
+
+  for (let i = 0; i < iterations; i++) {
+    hundredChars += chars;
+  }
+
+  hundredChars = hundredChars.slice(0, 100);
+
+  return hundredChars;
 }
