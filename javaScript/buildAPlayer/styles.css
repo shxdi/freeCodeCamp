@@ -61,19 +61,17 @@ main {
   margin: 16px;
 }
 
-#current-cover {
-  height: 150px;
-  width: 150px;
-}
-
 #now-playing {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   height: 150px;
-  width: 225px;
+  width: 350px;
   padding-bottom: 8px;
+  border: 5px solid var(--dark-one);
+  background-color: var(--dark-one);
+  margin: 8px;
 }
 
 #current-name {
@@ -85,13 +83,9 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: end;
-}
 
-#current-cover,
-#now-playing {
-  border: 5px solid var(--dark-one);
-  background-color: var(--dark-one);
-  margin: 8px;
+  border-top: 3px solid var(--dark-three);
+  padding-top: 16px;
 }
 
 #upcoming-container {
