@@ -67,9 +67,13 @@ main {
 }
 
 #now-playing {
-  background-color: --;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+
   height: 150px;
   width: 225px;
+  padding-bottom: 8px;
 }
 
 #current-cover,
@@ -107,4 +111,11 @@ main {
   margin-bottom: 8px;
   height: 48px;
   border-bottom: 2px solid var(--dark-one);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  height: 25px;
+  width: 25px;
 }
