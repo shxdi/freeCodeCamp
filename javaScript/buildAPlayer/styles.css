@@ -68,12 +68,23 @@ main {
 
 #now-playing {
   display: flex;
-  justify-content: space-around;
-  align-items: end;
+  flex-direction: column;
+  justify-content: space-between;
 
   height: 150px;
   width: 225px;
   padding-bottom: 8px;
+}
+
+#current-name {
+  padding: 16px;
+  font-size: 1.2em;
+}
+
+#current-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
 }
 
 #current-cover,
