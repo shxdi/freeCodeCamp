@@ -26,5 +26,24 @@ For example, given "# My level 1 heading", return "<h1>My level 1 heading</h1>".
 */
 
 function convert(heading) {
-  return heading;
+  const headingReplacements = {
+    h1: [/^[ ]*#[ ]+(.+$)/, '<h1>$1</h1>'],
+    h2: [/^[ ]*#{2}[ ]+(.+$)/, '<h2>$1</h2>'],
+    h3: [/^[ ]*#{3}[ ]+(.+$)/, '<h3>$1</h3>'],
+    h4: [/^[ ]*#{4}[ ]+(.+$)/, '<h4>$1</h4>'],
+    h5: [/^[ ]*#{5}[ ]+(.+$)/, '<h5>$1</h5>'],
+    h6: [/^[ ]*#{6}[ ]+(.+$)/, '<h6>$1</h6>'],
+  };
+  let htmlHeading = 'Invalid format';
+
+  for (let headingArr in headingReplacements) {
+    let regex = headingReplacements[headingArr][0];
+    let html = headingReplacements[headingArr][1];
+
+    if (regex.test(heading)) {
+      htmlHeading = heading.replace(regex, html);
+    }
+  }
+
+  return htmlHeading;
 }
