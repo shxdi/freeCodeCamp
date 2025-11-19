@@ -29,25 +29,25 @@ main {
   color: var(--light);
 }
 
-#current-container {
+#playing-container {
   height: 35%;
   margin-bottom: 16px;
 }
 
-#current-container,
-#upcoming-container {
+#playing-container,
+#surah-container {
   width: 100%;
   border: 5px solid var(--dark-two);
   background-color: var(--dark-one);
 }
 
-#header,
-#upcoming-title {
+#title,
+#juz-title {
   text-align: center;
   padding: 4px;
 }
 
-#playing-container {
+#current-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,26 +84,26 @@ main {
   padding-top: 16px;
 }
 
-#upcoming-container {
+#surah-container {
   height: 65%;
 }
 
-#header,
-#upcoming-title,
-#upcoming-title,
-#upcoming-list {
+#title,
+#juz-title,
+#juz-title,
+#surah-list {
   background-color: var(--dark-two);
   margin: 16px;
 }
 
-#upcoming-list {
+#surah-list {
   height: 395px;
   padding: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
-.upcoming-item {
+.surah {
   display: flex;
   justify-content: space-between;
   align-items: center;
