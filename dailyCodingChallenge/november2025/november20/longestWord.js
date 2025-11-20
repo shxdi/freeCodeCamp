@@ -18,5 +18,14 @@ Return the word as it appears in the given string, with punctuation removed.
 */
 
 function longestWord(sentence) {
-  return sentence;
+  let words = sentence.replace(/[^\w\s]+/g, '').split(' ');
+  let longest = words[0];
+
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+
+  return longest;
 }
