@@ -18,5 +18,20 @@ Multplies of 6 are 6, 12, 18 and so on.
 */
 
 function lcm(a, b) {
-  return a;
+  let aMultiple = a;
+  let bMultiple = b;
+  let aTimes = 1;
+  let bTimes = 1;
+
+  while (aMultiple !== bMultiple) {
+    if (aMultiple < bMultiple) {
+      aTimes += 1;
+      aMultiple = aTimes * a;
+    } else if (aMultiple > bMultiple) {
+      bTimes += 1;
+      bMultiple = bTimes * b;
+    }
+  }
+
+  return aMultiple;
 }
