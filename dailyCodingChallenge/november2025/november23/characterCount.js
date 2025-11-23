@@ -18,5 +18,27 @@ Do not return a count of letters that are not in the given string.
 */
 
 function countCharacters(sentence) {
-  return sentence;
+  const lettersArr = [];
+  let letters = sentence
+    .replace(/[^a-z]/gi, '')
+    .toLowerCase()
+    .split('')
+    .sort();
+  let previousLetter;
+
+  letters.forEach((letter) => {
+    if (letter === previousLetter) {
+      lettersArr[lettersArr.length - 1][1]++;
+    } else {
+      lettersArr.push([letter, 1]);
+    }
+
+    previousLetter = letter;
+  });
+
+  for (let i = 0; i < lettersArr.length; i++) {
+    lettersArr[i] = lettersArr[i].join(' ');
+  }
+
+  return lettersArr;
 }
