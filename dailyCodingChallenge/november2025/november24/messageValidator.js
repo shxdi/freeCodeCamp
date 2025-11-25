@@ -18,5 +18,17 @@ Words in the message are separated by single spaces.
 */
 
 function isValidMessage(message, validator) {
-  return message;
+  const words = message.split(' ');
+
+  if (words.length !== validator.length) {
+    return false;
+  }
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i][0].toLowerCase() !== validator[i].toLowerCase()) {
+      return false;
+    }
+  }
+
+  return true;
 }
