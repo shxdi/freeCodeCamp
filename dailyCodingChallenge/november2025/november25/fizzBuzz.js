@@ -34,5 +34,5 @@ function fizzBuzz(n) {
     }
   }
 
-  return n;
+  return fizzBuzzArr;
 }
