@@ -16,5 +16,20 @@ Be sure to account for whether the person has already had their birthday in 2025
 */
 
 function calculateAge(birthday) {
-  return birthday;
+  let year = 2025;
+  let month = 11;
+  let day = 27;
+  let birthArr = birthday.split('-');
+
+  let age;
+
+  if (birthArr[1] < month) {
+    age = year - birthArr[0];
+  } else if (Number(birthArr[1]) === month && birthArr[2] < day) {
+    age = year - birthArr[0];
+  } else {
+    age = year - birthArr[0] - 1;
+  }
+
+  return age;
 }
