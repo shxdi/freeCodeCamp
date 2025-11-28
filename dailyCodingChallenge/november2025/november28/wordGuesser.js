@@ -31,5 +31,24 @@ The first "P" is not in the correct location ("1"), the "O" isn't in the secret 
 */
 
 function compare(word, guess) {
-  return word;
+  let matches = [];
+  let availChars = word;
+
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === guess[i]) {
+      matches.push('2');
+      availChars = availChars.replace(guess[i], '');
+    } else {
+      matches.push('0');
+    }
+  }
+
+  for (let i = 0; i < word.length; i++) {
+    if (word.includes(guess[i]) && availChars.includes(guess[i])) {
+      matches[i] = '1';
+      availChars = availChars.replace(guess[i], '');
+    }
+  }
+
+  return matches.join('');
 }
