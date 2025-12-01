@@ -39,4 +39,16 @@ class BankAccount {
 
     return depositList;
   }
+
+  listAllWithdrawals() {
+    let withdrawalList = 'Withdrawals: ';
+
+    this.transactions.forEach((item) => {
+      if (item.type === 'withdraw') {
+        withdrawalList += `${item.amount},`;
+      }
+    });
+
+    return withdrawalList;
+  }
 }
