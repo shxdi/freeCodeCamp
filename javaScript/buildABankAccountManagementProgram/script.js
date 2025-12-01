@@ -8,7 +8,7 @@ class BankAccount {
     if (amount > 0) {
       this.transactions.push({ type: 'deposit', amount: amount });
       this.balance += amount;
-      return `Successfully deposited $${amount}. New balance: $${balance}`;
+      return `Successfully deposited $${this.amount}. New balance: $${this.balance}`;
     } else if (amount <= 0) {
       return 'Deposit amount must be greater than zero.';
     }
@@ -18,7 +18,7 @@ class BankAccount {
     if (amount > 0 && amount <= this.balance) {
       this.transactions.push({ type: 'withdraw', amount: amount });
       this.balance -= amount;
-      return `Successfully withdrew $${amount}. New balance: $${balance}`;
+      return `Successfully withdrew $${this.amount}. New balance: $${this.balance}`;
     } else if (amount <= 0 || amount > this.balance) {
       return 'Insufficient balance or invalid amount.';
     }
