@@ -13,4 +13,14 @@ class BankAccount {
       return 'Deposit amount must be greater than zero.';
     }
   }
+
+  withdraw(amount) {
+    if (amount > 0 && amount <= this.balance) {
+      this.transactions.push({ type: 'withdraw', amount: amount });
+      this.balance -= amount;
+      return `Successfully withdrew $${amount}. New balance: $${balance}`;
+    } else if (amount <= 0 || amount > this.balance) {
+      return 'Insufficient balance or invalid amount.';
+    }
+  }
 }
