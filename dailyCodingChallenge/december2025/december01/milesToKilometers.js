@@ -15,5 +15,5 @@ Round the result to two decimal places.
 */
 
 function convertToKm(miles) {
-  return miles;
+  return (miles * 1.60934).toFixed(2);
 }
