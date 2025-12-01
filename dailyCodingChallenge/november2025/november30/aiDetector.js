@@ -25,5 +25,17 @@ If the given sentence meets any of the rules above, return "AI", otherwise, retu
 */
 
 function detectAI(text) {
-  return text;
+  let checkOneRegex = /.*-.*-.*/;
+  let checkTwoRegex = /.*\(.*\).*\(.*\).*/;
+  let checkThreeRegex = /.*[a-zA-Z]{7,}.*[a-zA-Z]{7,}.*[a-zA-Z]{7,}.*/;
+
+  if (text.match(checkOneRegex)) {
+    return 'AI';
+  } else if (text.match(checkTwoRegex)) {
+    return 'AI';
+  } else if (text.match(checkThreeRegex)) {
+    return 'AI';
+  } else {
+    return 'Human';
+  }
 }
