@@ -27,4 +27,16 @@ class BankAccount {
   checkBalance() {
     return `Current balance: $${this.balance}`;
   }
+
+  listAllDeposits() {
+    let depositList = 'Deposits: ';
+
+    this.transactions.forEach((item) => {
+      if (item.type === 'deposit') {
+        depositList += `${item.amount},`;
+      }
+    });
+
+    return depositList;
+  }
 }
