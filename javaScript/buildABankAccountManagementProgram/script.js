@@ -52,3 +52,11 @@ class BankAccount {
     return withdrawalList;
   }
 }
+
+const myAccount = new BankAccount();
+
+myAccount.deposit(150);
+myAccount.withdraw(10);
+myAccount.withdraw(45);
+myAccount.deposit(125);
+myAccount.withdraw(75);
