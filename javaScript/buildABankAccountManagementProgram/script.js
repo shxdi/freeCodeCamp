@@ -25,6 +25,6 @@ class BankAccount {
   }
 
   checkBalance() {
-    return `Current balance: $${balance}`;
+    return `Current balance: $${this.balance}`;
   }
 }
