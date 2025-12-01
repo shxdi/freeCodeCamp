@@ -37,7 +37,7 @@ class BankAccount {
       }
     });
 
-    return depositList;
+    return depositList.slice(0, -1);
   }
 
   listAllWithdrawals() {
@@ -49,7 +49,7 @@ class BankAccount {
       }
     });
 
-    return withdrawalList;
+    return withdrawalList.slice(0, -1);
   }
 }
 
