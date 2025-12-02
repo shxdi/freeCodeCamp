@@ -16,5 +16,15 @@ Separate words with an underscore (_).
 */
 
 function toSnake(camel) {
-  return camel;
+  let snake = '';
+
+  for (let i = 0; i < camel.length; i++) {
+    if (camel[i].toUpperCase() === camel[i]) {
+      snake += `_${camel[i].toLowerCase()}`;
+    } else {
+      snake += camel[i];
+    }
+  }
+
+  return snake;
 }
