@@ -26,5 +26,19 @@ Note: The console may not display HTML tags in strings when logging messages. Ch
 */
 
 function convertListItem(markdown) {
-  return markdown;
+  let regex = / *[0-9][.] *.*/;
+
+  if (!regex.test(markdown)) {
+    return 'Invalid format';
+  }
+
+  let itemText = markdown.split('.');
+  itemText.shift();
+  itemText = itemText.join('.').trim();
+
+  console.log(itemText);
+
+  let html = `<li>${itemText}</li>`;
+
+  return html;
 }
