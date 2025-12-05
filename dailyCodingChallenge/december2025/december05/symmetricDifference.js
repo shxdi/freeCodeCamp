@@ -14,5 +14,19 @@ Return the values in the order they first appear in the input arrays.
 */
 
 function difference(arr1, arr2) {
-  return arr1;
+  const different = [];
+
+  arr1.forEach((item) => {
+    if (!arr2.includes(item)) {
+      different.push(item);
+    }
+  });
+
+  arr2.forEach((item) => {
+    if (!arr1.includes(item)) {
+      different.push(item);
+    }
+  });
+
+  return different;
 }
