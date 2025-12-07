@@ -16,5 +16,12 @@ For example, given "December 6, 2025", return "2025-12-06".
 */
 
 function formatDate(dateString) {
-  return dateString;
+  const date = new Date(dateString);
+  const dateInFormat = date.toISOString().split('T')[0];
+
+  if (dateInFormat[0] === '0') {
+    return dateInFormat.slice(1);
+  } else {
+    return dateInFormat;
+  }
 }
