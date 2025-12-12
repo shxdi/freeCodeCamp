@@ -18,5 +18,15 @@ If the converted value is 1, use "kilogram" instead of "kilograms".
 */
 
 function convertToKgs(lbs) {
-  return lbs;
+  const kgs = (lbs * 0.453592).toFixed(2);
+
+  console.log(kgs);
+
+  if (lbs === 1) {
+    return `${lbs} pound equals ${kgs} kilograms.`;
+  } else if (kgs === '1.00') {
+    return `${lbs} pounds equals ${kgs} kilogram.`;
+  } else {
+    return `${lbs} pounds equals ${kgs} kilograms.`;
+  }
 }
