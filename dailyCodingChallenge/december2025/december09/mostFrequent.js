@@ -12,5 +12,25 @@ There will always be a single most frequent element.
 */
 
 function mostFrequent(arr) {
-  return arr;
+  const map = new Map();
+  let currentHighest;
+  let currentCount = 0;
+
+  arr.forEach((ele) => {
+    if (map.has(ele)) {
+      let count = map.get(ele);
+      map.set(ele, ++count);
+    } else {
+      map.set(ele, 1);
+    }
+  });
+
+  map.forEach((count, key) => {
+    if (count > currentCount) {
+      currentCount = count;
+      currentHighest = key;
+    }
+  });
+
+  return currentHighest;
 }
