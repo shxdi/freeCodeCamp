@@ -22,5 +22,16 @@ Note: The console may not display HTML tags in strings when logging messages. Ch
 */
 
 function parseBold(markdown) {
-  return markdown;
+  let boldPatterns = {
+    regex: /[*_]{2}(\S[^*_]*\S)[*_]{2}/g,
+    html: '<b>$1</b>',
+  };
+
+  if (markdown.match(boldPatterns.regex)) {
+    let html = markdown.replace(boldPatterns.regex, boldPatterns.html);
+
+    return html;
+  } else {
+    return markdown;
+  }
 }
