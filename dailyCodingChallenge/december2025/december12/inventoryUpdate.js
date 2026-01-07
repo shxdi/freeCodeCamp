@@ -24,3 +24,26 @@ For example, given an inventory of [[2, "apples"], [5, "bananas"]] and a shipmen
 4. updateInventory([[0, "Bowling Ball"], [0, "Dirty Socks"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]) 
     should return [[1, "Bowling Ball"], [0, "Dirty Socks"], [1, "Hair Pin"], [0, "Microphone"], [1, "Half-Eaten Apple"], [1, "Toothpaste"]].
 */
+
+function updateInventory(inventory, shipment) {
+  let updatedInv = inventory;
+
+  shipment.forEach((ele) => {
+    const item = ele[1];
+    const quantity = ele[0];
+    let isInInventory = false;
+
+    updatedInv.forEach((ele) => {
+      if (ele[1] === item) {
+        ele[0] += quantity;
+        isInInventory = true;
+      }
+    });
+
+    if (!isInInventory) {
+      updatedInv.push(ele);
+    }
+  });
+
+  return updatedInv;
+}
