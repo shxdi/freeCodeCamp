@@ -14,5 +14,22 @@ Words are always separated by a single space.
 */
 
 function titleCase(title) {
-  return title;
+  let words = title.split(' ');
+  let capTitle = [];
+
+  for (let word of words) {
+    let firstChar = word[0];
+    let remainChar = word.slice(1);
+    let capWord = '';
+
+    capWord += firstChar.toUpperCase();
+
+    for (let i = 0; i < remainChar.length; i++) {
+      capWord += remainChar[i].toLowerCase();
+    }
+
+    capTitle.push(capWord);
+  }
+
+  return capTitle.join(' ');
 }
