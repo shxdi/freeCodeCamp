@@ -25,5 +25,9 @@ Note: The console may not display HTML tags in strings when logging messages. Ch
 */
 
 function parseBlockquote(markdown) {
-  return markdown;
+  let regex = /[ ]*[>][ ]+(\S.*)/;
+
+  let htmlStr = markdown.replace(regex, '<blockquote>$1</blockquote>');
+
+  return htmlStr;
 }
