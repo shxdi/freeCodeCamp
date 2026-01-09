@@ -18,5 +18,13 @@ If you are traveling more than 5 KPH over the speed limit, return "Ticket".
 */
 
 function speedCheck(speedMph, speedLimitKph) {
-  return speedMph;
+  let speedKph = speedMph * 1.60934;
+
+  if (speedKph <= speedLimitKph) {
+    return 'Not Speeding';
+  } else if (speedKph <= speedLimitKph + 5) {
+    return 'Warning';
+  } else if (speedKph > speedLimitKph + 5) {
+    return 'Ticket';
+  }
 }
