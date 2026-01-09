@@ -17,5 +17,21 @@ Add all the indices together to get a return value of 9.
 */
 
 function pairwise(arr, target) {
-  return arr;
+  let sumOfIndices = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let remaining = arr.slice(i + 1);
+
+    for (let j = 0; j < remaining.length; j++) {
+      if (arr[i] + remaining[j] === target) {
+        // For getting correct second index
+        let jIndex = j + i + 1;
+
+        sumOfIndices += i;
+        sumOfIndices += jIndex;
+      }
+    }
+  }
+
+  return sumOfIndices;
 }
