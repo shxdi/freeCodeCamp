@@ -15,5 +15,20 @@ Ignore digits, punctuation, spaces, and other non-letter characters when countin
 */
 
 function hasConsonantCount(text, target) {
-  return text;
+  let chars = text.split('');
+  let consonantCount = 0;
+
+  for (let char of chars) {
+    let regex = /[b-df-hj-np-tv-z]/i;
+
+    if (regex.test(char)) {
+      consonantCount++;
+    }
+  }
+
+  if (consonantCount === target) {
+    return true;
+  } else {
+    return false;
+  }
 }
