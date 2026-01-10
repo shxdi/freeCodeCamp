@@ -16,5 +16,35 @@ Do not change any of the other elements or their order.
 */
 
 function purgeMostFrequent(arr) {
-  return arr;
+  const elementCounts = {};
+  let highestCount = 0;
+  let mostFrequent;
+  let arrCopy = arr;
+
+  // Find count of each element
+  for (let element of arr) {
+    if (!elementCounts.hasOwnProperty(element)) {
+      let sameInArr = arr.filter((ele) => ele === element);
+
+      elementCounts[sameInArr.length] = element;
+    }
+  }
+
+  // Find which element is most frequent
+  for (let ele in elementCounts) {
+    let currentCount = ele;
+
+    if (currentCount > highestCount) {
+      highestCount = currentCount;
+      mostFrequent = elementCounts[ele];
+    }
+  }
+
+  while (arrCopy.includes(mostFrequent)) {
+    let index = arrCopy.indexOf(mostFrequent);
+
+    arrCopy.splice(index, 1);
+  }
+
+  return arrCopy;
 }
