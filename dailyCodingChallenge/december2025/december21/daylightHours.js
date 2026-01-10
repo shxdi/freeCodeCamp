@@ -37,5 +37,29 @@ If the given latitude does not exactly match a table entry, use the value of the
 */
 
 function daylightHours(latitude) {
-  return latitude;
+  if (latitude <= -81.5) {
+    return 24;
+  } else if (latitude > -81.5 && latitude <= -66.5) {
+    return 23;
+  } else if (latitude > -66.5 && latitude <= -51.5) {
+    return 21;
+  } else if (latitude > -51.5 && latitude <= -36.5) {
+    return 15;
+  } else if (latitude > -36.5 && latitude <= -21.5) {
+    return 13;
+  } else if (latitude > -21.5 && latitude <= 8.5) {
+    return 12;
+  } else if (latitude > 8.5 && latitude <= 21.5) {
+    return 11;
+  } else if (latitude > 21.5 && latitude <= 36.5) {
+    return 10;
+  } else if (latitude > 36.5 && latitude <= 51.5) {
+    return 9;
+  } else if (latitude > 51.5 && latitude <= 66.5) {
+    return 6;
+  } else if (latitude > 66.5 && latitude <= 81.5) {
+    return 2;
+  } else if (latitude >= 81.5) {
+    return 0;
+  }
 }
