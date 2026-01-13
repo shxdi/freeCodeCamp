@@ -21,5 +21,8 @@ Note: The console may not display HTML tags in strings when logging messages —
     return '<img src="https://freecodecamp.org/cdn/rocket-ship.jpg" alt="Rocket Ship">'.*/
 
 function parseImage(markdown) {
-  return markdown;
+  const regex = /!\[(.*)\]\((.*)\)/;
+  const html = '<img src="$2" alt="$1">';
+
+  return markdown.replace(regex, html);
 }
