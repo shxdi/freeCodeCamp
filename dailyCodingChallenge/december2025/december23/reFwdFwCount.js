@@ -12,7 +12,7 @@ Return the total number of occurrences of these markers.
 */
 
 /*
-emailChainCount("Re: Meeting Notes") should return 1.
+1. emailChainCount("Re: Meeting Notes") should return 1.
 2. emailChainCount("Meeting Notes") should return 0.
 3. emailChainCount("Re: re: RE: rE: Meeting Notes") should return 4.
 4. emailChainCount("Re: Fwd: Re: Fw: Re: Meeting Notes") should return 5.
@@ -21,5 +21,16 @@ emailChainCount("Re: Meeting Notes") should return 1.
 */
 
 function emailChainCount(subject) {
-  return subject;
+  const regex = /^[ ]*(?:re|fw|fwd)$/i;
+  let chainCount = 0;
+
+  let emailChainParts = subject.split(':');
+
+  emailChainParts.forEach((ele) => {
+    if (regex.test(ele)) {
+      chainCount++;
+    }
+  });
+
+  return chainCount;
 }
